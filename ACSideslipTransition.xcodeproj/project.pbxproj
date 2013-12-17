@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		507CB64D1860657200A4470F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64C1860657200A4470F /* Foundation.framework */; };
+		507CB64F1860657200A4470F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64E1860657200A4470F /* CoreGraphics.framework */; };
+		507CB6511860657200A4470F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6501860657200A4470F /* UIKit.framework */; };
+		507CB6571860657200A4470F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507CB6551860657200A4470F /* InfoPlist.strings */; };
+		507CB6591860657200A4470F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6581860657200A4470F /* main.m */; };
+		507CB65D1860657200A4470F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB65C1860657200A4470F /* AppDelegate.m */; };
+		507CB65F1860657200A4470F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507CB65E1860657200A4470F /* Images.xcassets */; };
+		507CB6661860657200A4470F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6651860657200A4470F /* XCTest.framework */; };
+		507CB6671860657200A4470F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64C1860657200A4470F /* Foundation.framework */; };
+		507CB6681860657200A4470F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6501860657200A4470F /* UIKit.framework */; };
+		507CB6701860657200A4470F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507CB66E1860657200A4470F /* InfoPlist.strings */; };
+		507CB6721860657200A4470F /* ACSideslipTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6711860657200A4470F /* ACSideslipTransitionTests.m */; };
+		507CB683186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */; };
+		507CB684186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */; };
+		507CB685186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */; };
+		507CB686186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */; };
+		507CB687186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */; };
+		507CB688186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */; };
+		507CB68D1860660F00A4470F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68A1860660F00A4470F /* FirstViewController.m */; };
+		507CB68E1860660F00A4470F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68A1860660F00A4470F /* FirstViewController.m */; };
+		507CB68F1860660F00A4470F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68C1860660F00A4470F /* SecondViewController.m */; };
+		507CB6901860660F00A4470F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68C1860660F00A4470F /* SecondViewController.m */; };
+		507CB6BB18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */; };
+		507CB6BC18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */; };
+		50AB4EED186072B600DB1C93 /* ACBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */; };
+		50AB4EEE186072B600DB1C93 /* ACBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		507CB6691860657200A4470F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 507CB6411860657200A4470F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 507CB6481860657200A4470F;
+			remoteInfo = ACSideslipTransition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		507CB6491860657200A4470F /* ACSideslipTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACSideslipTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		507CB64C1860657200A4470F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		507CB64E1860657200A4470F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		507CB6501860657200A4470F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		507CB6541860657200A4470F /* ACSideslipTransition-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACSideslipTransition-Info.plist"; sourceTree = "<group>"; };
+		507CB6561860657200A4470F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		507CB6581860657200A4470F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		507CB65A1860657200A4470F /* ACSideslipTransition-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ACSideslipTransition-Prefix.pch"; sourceTree = "<group>"; };
+		507CB65B1860657200A4470F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		507CB65C1860657200A4470F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		507CB65E1860657200A4470F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		507CB6641860657200A4470F /* ACSideslipTransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACSideslipTransitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		507CB6651860657200A4470F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		507CB66D1860657200A4470F /* ACSideslipTransitionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACSideslipTransitionTests-Info.plist"; sourceTree = "<group>"; };
+		507CB66F1860657200A4470F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		507CB6711860657200A4470F /* ACSideslipTransitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACSideslipTransitionTests.m; sourceTree = "<group>"; };
+		507CB67C186065EA00A4470F /* ACSideslipDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipDismissAnimation.h; sourceTree = "<group>"; };
+		507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSideslipDismissAnimation.m; sourceTree = "<group>"; };
+		507CB67E186065EA00A4470F /* ACSideslipMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipMacros.h; sourceTree = "<group>"; };
+		507CB67F186065EA00A4470F /* ACSideslipPresentAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipPresentAnimation.h; sourceTree = "<group>"; };
+		507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSideslipPresentAnimation.m; sourceTree = "<group>"; };
+		507CB681186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipSwipeInteractiveTransition.h; sourceTree = "<group>"; };
+		507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSideslipSwipeInteractiveTransition.m; sourceTree = "<group>"; };
+		507CB6891860660F00A4470F /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		507CB68A1860660F00A4470F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		507CB68B1860660F00A4470F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		507CB68C1860660F00A4470F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		507CB6921860666E00A4470F /* ACModalViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACModalViewControllerDelegate.h; sourceTree = "<group>"; };
+		507CB6A718606F5200A4470F /* UINavigationBar+TitleTextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+TitleTextColor.h"; sourceTree = "<group>"; };
+		507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+TitleTextColor.m"; sourceTree = "<group>"; };
+		50AB4EEB186072B600DB1C93 /* ACBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACBaseViewController.h; sourceTree = "<group>"; };
+		50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACBaseViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		507CB6461860657200A4470F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CB64F1860657200A4470F /* CoreGraphics.framework in Frameworks */,
+				507CB6511860657200A4470F /* UIKit.framework in Frameworks */,
+				507CB64D1860657200A4470F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507CB6611860657200A4470F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CB6661860657200A4470F /* XCTest.framework in Frameworks */,
+				507CB6681860657200A4470F /* UIKit.framework in Frameworks */,
+				507CB6671860657200A4470F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		507CB6401860657200A4470F = {
+			isa = PBXGroup;
+			children = (
+				507CB6521860657200A4470F /* ACSideslipTransition */,
+				507CB66B1860657200A4470F /* ACSideslipTransitionTests */,
+				507CB64B1860657200A4470F /* Frameworks */,
+				507CB64A1860657200A4470F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		507CB64A1860657200A4470F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				507CB6491860657200A4470F /* ACSideslipTransition.app */,
+				507CB6641860657200A4470F /* ACSideslipTransitionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		507CB64B1860657200A4470F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				507CB64C1860657200A4470F /* Foundation.framework */,
+				507CB64E1860657200A4470F /* CoreGraphics.framework */,
+				507CB6501860657200A4470F /* UIKit.framework */,
+				507CB6651860657200A4470F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		507CB6521860657200A4470F /* ACSideslipTransition */ = {
+			isa = PBXGroup;
+			children = (
+				50AB4EE8186072B500DB1C93 /* Custom */,
+				507CB69A18606F5200A4470F /* Categories */,
+				507CB67B186065EA00A4470F /* ACSideslipTransition */,
+				507CB6921860666E00A4470F /* ACModalViewControllerDelegate.h */,
+				507CB65B1860657200A4470F /* AppDelegate.h */,
+				507CB65C1860657200A4470F /* AppDelegate.m */,
+				507CB6891860660F00A4470F /* FirstViewController.h */,
+				507CB68A1860660F00A4470F /* FirstViewController.m */,
+				507CB68B1860660F00A4470F /* SecondViewController.h */,
+				507CB68C1860660F00A4470F /* SecondViewController.m */,
+				507CB65E1860657200A4470F /* Images.xcassets */,
+				507CB6531860657200A4470F /* Supporting Files */,
+			);
+			path = ACSideslipTransition;
+			sourceTree = "<group>";
+		};
+		507CB6531860657200A4470F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				507CB6541860657200A4470F /* ACSideslipTransition-Info.plist */,
+				507CB6551860657200A4470F /* InfoPlist.strings */,
+				507CB6581860657200A4470F /* main.m */,
+				507CB65A1860657200A4470F /* ACSideslipTransition-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		507CB66B1860657200A4470F /* ACSideslipTransitionTests */ = {
+			isa = PBXGroup;
+			children = (
+				507CB6711860657200A4470F /* ACSideslipTransitionTests.m */,
+				507CB66C1860657200A4470F /* Supporting Files */,
+			);
+			path = ACSideslipTransitionTests;
+			sourceTree = "<group>";
+		};
+		507CB66C1860657200A4470F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				507CB66D1860657200A4470F /* ACSideslipTransitionTests-Info.plist */,
+				507CB66E1860657200A4470F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		507CB67B186065EA00A4470F /* ACSideslipTransition */ = {
+			isa = PBXGroup;
+			children = (
+				507CB67E186065EA00A4470F /* ACSideslipMacros.h */,
+				507CB67F186065EA00A4470F /* ACSideslipPresentAnimation.h */,
+				507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */,
+				507CB67C186065EA00A4470F /* ACSideslipDismissAnimation.h */,
+				507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */,
+				507CB681186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.h */,
+				507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */,
+			);
+			path = ACSideslipTransition;
+			sourceTree = "<group>";
+		};
+		507CB69A18606F5200A4470F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				507CB69B18606F5200A4470F /* UI */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		507CB69B18606F5200A4470F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				507CB6A718606F5200A4470F /* UINavigationBar+TitleTextColor.h */,
+				507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		50AB4EE8186072B500DB1C93 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				50AB4EE9186072B600DB1C93 /* UI */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		50AB4EE9186072B600DB1C93 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				50AB4EEA186072B600DB1C93 /* BaseViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		50AB4EEA186072B600DB1C93 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50AB4EEB186072B600DB1C93 /* ACBaseViewController.h */,
+				50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		507CB6481860657200A4470F /* ACSideslipTransition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507CB6751860657200A4470F /* Build configuration list for PBXNativeTarget "ACSideslipTransition" */;
+			buildPhases = (
+				507CB6451860657200A4470F /* Sources */,
+				507CB6461860657200A4470F /* Frameworks */,
+				507CB6471860657200A4470F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACSideslipTransition;
+			productName = ACSideslipTransition;
+			productReference = 507CB6491860657200A4470F /* ACSideslipTransition.app */;
+			productType = "com.apple.product-type.application";
+		};
+		507CB6631860657200A4470F /* ACSideslipTransitionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507CB6781860657200A4470F /* Build configuration list for PBXNativeTarget "ACSideslipTransitionTests" */;
+			buildPhases = (
+				507CB6601860657200A4470F /* Sources */,
+				507CB6611860657200A4470F /* Frameworks */,
+				507CB6621860657200A4470F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				507CB66A1860657200A4470F /* PBXTargetDependency */,
+			);
+			name = ACSideslipTransitionTests;
+			productName = ACSideslipTransitionTests;
+			productReference = 507CB6641860657200A4470F /* ACSideslipTransitionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		507CB6411860657200A4470F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Albert Chu";
+				TargetAttributes = {
+					507CB6631860657200A4470F = {
+						TestTargetID = 507CB6481860657200A4470F;
+					};
+				};
+			};
+			buildConfigurationList = 507CB6441860657200A4470F /* Build configuration list for PBXProject "ACSideslipTransition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 507CB6401860657200A4470F;
+			productRefGroup = 507CB64A1860657200A4470F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				507CB6481860657200A4470F /* ACSideslipTransition */,
+				507CB6631860657200A4470F /* ACSideslipTransitionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		507CB6471860657200A4470F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CB6571860657200A4470F /* InfoPlist.strings in Resources */,
+				507CB65F1860657200A4470F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507CB6621860657200A4470F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CB6701860657200A4470F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		507CB6451860657200A4470F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CB687186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
+				507CB6BB18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */,
+				507CB68D1860660F00A4470F /* FirstViewController.m in Sources */,
+				507CB65D1860657200A4470F /* AppDelegate.m in Sources */,
+				507CB68F1860660F00A4470F /* SecondViewController.m in Sources */,
+				507CB685186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */,
+				507CB6591860657200A4470F /* main.m in Sources */,
+				507CB683186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */,
+				50AB4EED186072B600DB1C93 /* ACBaseViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		507CB6601860657200A4470F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CB6BC18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */,
+				507CB6901860660F00A4470F /* SecondViewController.m in Sources */,
+				507CB684186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */,
+				507CB686186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */,
+				507CB68E1860660F00A4470F /* FirstViewController.m in Sources */,
+				507CB6721860657200A4470F /* ACSideslipTransitionTests.m in Sources */,
+				50AB4EEE186072B600DB1C93 /* ACBaseViewController.m in Sources */,
+				507CB688186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		507CB66A1860657200A4470F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 507CB6481860657200A4470F /* ACSideslipTransition */;
+			targetProxy = 507CB6691860657200A4470F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		507CB6551860657200A4470F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				507CB6561860657200A4470F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		507CB66E1860657200A4470F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				507CB66F1860657200A4470F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		507CB6731860657200A4470F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		507CB6741860657200A4470F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		507CB6761860657200A4470F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACSideslipTransition/ACSideslipTransition-Prefix.pch";
+				INFOPLIST_FILE = "ACSideslipTransition/ACSideslipTransition-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		507CB6771860657200A4470F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACSideslipTransition/ACSideslipTransition-Prefix.pch";
+				INFOPLIST_FILE = "ACSideslipTransition/ACSideslipTransition-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		507CB6791860657200A4470F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ACSideslipTransition.app/ACSideslipTransition";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACSideslipTransition/ACSideslipTransition-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ACSideslipTransitionTests/ACSideslipTransitionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		507CB67A1860657200A4470F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ACSideslipTransition.app/ACSideslipTransition";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ACSideslipTransition/ACSideslipTransition-Prefix.pch";
+				INFOPLIST_FILE = "ACSideslipTransitionTests/ACSideslipTransitionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		507CB6441860657200A4470F /* Build configuration list for PBXProject "ACSideslipTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507CB6731860657200A4470F /* Debug */,
+				507CB6741860657200A4470F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		507CB6751860657200A4470F /* Build configuration list for PBXNativeTarget "ACSideslipTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507CB6761860657200A4470F /* Debug */,
+				507CB6771860657200A4470F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		507CB6781860657200A4470F /* Build configuration list for PBXNativeTarget "ACSideslipTransitionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507CB6791860657200A4470F /* Debug */,
+				507CB67A1860657200A4470F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 507CB6411860657200A4470F /* Project object */;
+}
