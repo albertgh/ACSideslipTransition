@@ -17,6 +17,15 @@
     // Override point for customization after application launch.
     
     
+    //** 以 push 形式弹出的下一级视图控制器中的 返回按钮 自定义图片 ****************************************
+    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav_back.png"]];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav_back.png"]];
+    
+    // 位移隐藏掉文字
+    [UIBarButtonItem.appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
+    //*********************************************************************************************;
+    
+    
     
     FirstViewController *fVC = [[FirstViewController alloc] init];
     self.window.rootViewController = fVC;

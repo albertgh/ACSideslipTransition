@@ -26,4 +26,5 @@
 #define SWIPE_PERCENT               0.58f           // 前视图滑动距离占屏幕多少百分比后松开完成解散视图
 
 
+
 #endif

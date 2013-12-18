@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5020D70F186170B2005A2A70 /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D70E186170B2005A2A70 /* ThridViewController.m */; };
+		5020D710186170B2005A2A70 /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D70E186170B2005A2A70 /* ThridViewController.m */; };
+		5020D71718617C9C005A2A70 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71218617C9C005A2A70 /* nav_back@2x.png */; };
+		5020D71818617C9C005A2A70 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71218617C9C005A2A70 /* nav_back@2x.png */; };
+		5020D71E18617D12005A2A70 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71D18617D12005A2A70 /* nav_back.png */; };
+		5020D71F18617D12005A2A70 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71D18617D12005A2A70 /* nav_back.png */; };
 		507CB64D1860657200A4470F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64C1860657200A4470F /* Foundation.framework */; };
 		507CB64F1860657200A4470F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64E1860657200A4470F /* CoreGraphics.framework */; };
 		507CB6511860657200A4470F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6501860657200A4470F /* UIKit.framework */; };
@@ -46,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5020D70D186170B2005A2A70 /* ThridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThridViewController.h; sourceTree = "<group>"; };
+		5020D70E186170B2005A2A70 /* ThridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThridViewController.m; sourceTree = "<group>"; };
+		5020D71218617C9C005A2A70 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		5020D71D18617D12005A2A70 /* nav_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back.png; sourceTree = "<group>"; };
 		507CB6491860657200A4470F /* ACSideslipTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACSideslipTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507CB64C1860657200A4470F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		507CB64E1860657200A4470F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5020D70618617093005A2A70 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5020D71D18617D12005A2A70 /* nav_back.png */,
+				5020D71218617C9C005A2A70 /* nav_back@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		507CB6401860657200A4470F = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +166,10 @@
 				507CB68A1860660F00A4470F /* FirstViewController.m */,
 				507CB68B1860660F00A4470F /* SecondViewController.h */,
 				507CB68C1860660F00A4470F /* SecondViewController.m */,
+				5020D70D186170B2005A2A70 /* ThridViewController.h */,
+				5020D70E186170B2005A2A70 /* ThridViewController.m */,
 				507CB65E1860657200A4470F /* Images.xcassets */,
+				5020D70618617093005A2A70 /* Images */,
 				507CB6531860657200A4470F /* Supporting Files */,
 			);
 			path = ACSideslipTransition;
@@ -314,6 +336,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				507CB6571860657200A4470F /* InfoPlist.strings in Resources */,
+				5020D71718617C9C005A2A70 /* nav_back@2x.png in Resources */,
+				5020D71E18617D12005A2A70 /* nav_back.png in Resources */,
 				507CB65F1860657200A4470F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +346,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5020D71F18617D12005A2A70 /* nav_back.png in Resources */,
+				5020D71818617C9C005A2A70 /* nav_back@2x.png in Resources */,
 				507CB6701860657200A4470F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5020D70F186170B2005A2A70 /* ThridViewController.m in Sources */,
 				507CB687186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
 				507CB6BB18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */,
 				507CB68D1860660F00A4470F /* FirstViewController.m in Sources */,
@@ -355,6 +382,7 @@
 				507CB686186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */,
 				507CB68E1860660F00A4470F /* FirstViewController.m in Sources */,
 				507CB6721860657200A4470F /* ACSideslipTransitionTests.m in Sources */,
+				5020D710186170B2005A2A70 /* ThridViewController.m in Sources */,
 				50AB4EEE186072B600DB1C93 /* ACBaseViewController.m in Sources */,
 				507CB688186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
 			);

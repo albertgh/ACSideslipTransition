@@ -18,41 +18,6 @@
 
 #pragma mark - Life Cycle
 
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        //-- 状态栏配颜色 ----------------------------------------------------------------------------
-        
-        
-        //-----------------------------------------------------------------------------------------;
-        
-        
-        //-- 导航栏配颜色 ----------------------------------------------------------------------------
-        
-        // 如果用户没有指定该 视图控制器 的导航栏底色，则从前一个中取，即继承之前的颜色
-        if (!self.navigationBarBarTintColor)
-        {
-            self.navigationBarBarTintColor = self.navigationController.navigationBar.barTintColor;
-        }
-        
-        // 如果用户没有指定该 视图控制器 的导航栏互动按钮文字颜色，则从前一个中取，即继承之前的颜色
-        if (!self.navigationBarActionItemTintColor)
-        {
-            self.navigationBarActionItemTintColor = self.navigationController.navigationBar.tintColor;
-        }
-        
-        // 如果没有指定该 视图控制器 的 导航栏标题颜色，则从前一个取
-        if (!self.navigationBarTitleTextTintColor)
-        {
-           self.navigationBarTitleTextAttributes = self.navigationController.navigationBar.titleTextAttributes;
-        }
-        //-----------------------------------------------------------------------------------------;
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -63,6 +28,43 @@
     self.view.backgroundColor = [UIColor colorWithRed:232 / 255.f green:242 / 255.f blue:250 / 255.f alpha:1.f];
     
     //---------------------------------------------------------------------------------------------;
+    
+    
+    
+    //-- 状态栏配颜色 ----------------------------------------------------------------------------
+    // 先从前一个取色，以继承，若有变化，子类中会覆盖此项
+    
+    if ([UIApplication sharedApplication].statusBarStyle == 1)
+    {
+        self.lightStatusBarColor = 1;
+    }
+    
+    //-----------------------------------------------------------------------------------------;
+    
+
+    
+    
+    //-- 导航栏配颜色 ----------------------------------------------------------------------------
+    // 如果用户没有指定该 视图控制器 的导航栏底色，则从前一个中取，即继承之前的颜色
+    if (!self.navigationBarBarTintColor)
+    {
+        self.navigationBarBarTintColor = self.navigationController.navigationBar.barTintColor;
+    }
+    
+    // 如果用户没有指定该 视图控制器 的导航栏互动按钮文字颜色，则从前一个中取，即继承之前的颜色
+    if (!self.navigationBarActionItemTintColor)
+    {
+        self.navigationBarActionItemTintColor = self.navigationController.navigationBar.tintColor;
+    }
+    
+    // 如果没有指定该 视图控制器 的 导航栏标题颜色，则从前一个取
+    if (!self.navigationBarTitleTextTintColor)
+    {
+        self.navigationBarTitleTextAttributes = self.navigationController.navigationBar.titleTextAttributes;
+    }
+    //-----------------------------------------------------------------------------------------;
+
+    
 }
 
 
@@ -95,6 +97,7 @@
     // 即 继承上一个颜色, 并把该字典保存下来 以便从 子视图 返回时 恢复这个颜色
     if (!self.navigationBarTitleTextTintColor)
     {
+        // [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
         // DLog(@"%@", self.navigationController.navigationBar.titleTextAttributes);
         // 由于导航栏 标题 的文字颜色是通过字典设定, 取出为 { NSColor = "UIDeviceRGBColorSpace 1 1 1 1"; }
         self.navigationController.navigationBar.titleTextAttributes = self.navigationBarTitleTextAttributes;
@@ -105,11 +108,6 @@
         [self.navigationController.navigationBar doSetTitleTextColorBy:self.navigationBarTitleTextTintColor];
     }
     //*********************************************************************************************;
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    
 }
 
 

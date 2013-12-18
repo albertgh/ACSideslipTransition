@@ -37,7 +37,12 @@
 
 - (void)handleGesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    // 取得触摸点
+    CGPoint location = [gestureRecognizer locationInView:gestureRecognizer.view.superview];
+    
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view.superview];
+    
+    
     switch (gestureRecognizer.state)
     {
         case UIGestureRecognizerStateBegan:
@@ -50,6 +55,11 @@
             
         case UIGestureRecognizerStateChanged:
         {
+            if (location.x < 20)
+            {
+                NSLog(@"20");
+            }
+            
             // 2. Calculate the percentage of guesture
             CGFloat fraction = translation.x / [[UIScreen mainScreen] applicationFrame].size.width;
             //Limit it between 0 and 1
