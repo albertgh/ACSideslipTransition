@@ -9,18 +9,10 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ACModalViewControllerDelegate.h"
-#import "ACSideslipMacros.h"
+#import "ACSideslipTransition.h"
 
 
-@interface FirstViewController ()
-<
-ACModalViewControllerDelegate
-,UIViewControllerTransitioningDelegate
->
-
-@property (strong, nonatomic) ACSideslipPresentAnimation *presentAnimation;
-@property (strong, nonatomic) ACSideslipDismissAnimation *dismissAnimation;
-@property (strong, nonatomic) ACSideslipSwipeInteractiveTransition *interactiveTransition;
+@interface FirstViewController () <ACModalViewControllerDelegate>
 
 @end
 
@@ -38,26 +30,12 @@ ACModalViewControllerDelegate
     
     UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
     
-    nC.transitioningDelegate = self;
-    [self.interactiveTransition wireToViewController:nC];
-    
-    [self presentViewController:nC animated:YES completion:nil];
+    ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
+    [transition sideslip:nC from:self];
 }
 
 
 #pragma mark - LifeCycle
-
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        self.presentAnimation = [[ACSideslipPresentAnimation alloc] init];
-        self.dismissAnimation = [[ACSideslipDismissAnimation alloc] init];
-        self.interactiveTransition = [[ACSideslipSwipeInteractiveTransition alloc] init];
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -85,7 +63,6 @@ ACModalViewControllerDelegate
     
     
     //-- 按钮 ---------------------------------------------------------------
-    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(100.0, 200.0, 120.0, 40.0);
     button.backgroundColor = [UIColor orangeColor];
@@ -106,24 +83,9 @@ ACModalViewControllerDelegate
 }
 
 
-
 - (void)modalViewControllerDoDismiss:(UIViewController *)viewController
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-{
-    return self.presentAnimation;
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    return self.dismissAnimation;
-}
-
--(id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return self.interactiveTransition.interacting ? self.interactiveTransition : nil;
 }
 
 

@@ -13,6 +13,8 @@
 		5020D71818617C9C005A2A70 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71218617C9C005A2A70 /* nav_back@2x.png */; };
 		5020D71E18617D12005A2A70 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71D18617D12005A2A70 /* nav_back.png */; };
 		5020D71F18617D12005A2A70 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71D18617D12005A2A70 /* nav_back.png */; };
+		5020D722186185AF005A2A70 /* ACSideslipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D721186185AF005A2A70 /* ACSideslipTransition.m */; };
+		5020D723186185AF005A2A70 /* ACSideslipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D721186185AF005A2A70 /* ACSideslipTransition.m */; };
 		507CB64D1860657200A4470F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64C1860657200A4470F /* Foundation.framework */; };
 		507CB64F1860657200A4470F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64E1860657200A4470F /* CoreGraphics.framework */; };
 		507CB6511860657200A4470F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6501860657200A4470F /* UIKit.framework */; };
@@ -56,6 +58,8 @@
 		5020D70E186170B2005A2A70 /* ThridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThridViewController.m; sourceTree = "<group>"; };
 		5020D71218617C9C005A2A70 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
 		5020D71D18617D12005A2A70 /* nav_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back.png; sourceTree = "<group>"; };
+		5020D720186185AF005A2A70 /* ACSideslipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipTransition.h; sourceTree = "<group>"; };
+		5020D721186185AF005A2A70 /* ACSideslipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSideslipTransition.m; sourceTree = "<group>"; };
 		507CB6491860657200A4470F /* ACSideslipTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACSideslipTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507CB64C1860657200A4470F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		507CB64E1860657200A4470F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -207,6 +211,8 @@
 		507CB67B186065EA00A4470F /* ACSideslipTransition */ = {
 			isa = PBXGroup;
 			children = (
+				5020D720186185AF005A2A70 /* ACSideslipTransition.h */,
+				5020D721186185AF005A2A70 /* ACSideslipTransition.m */,
 				507CB67E186065EA00A4470F /* ACSideslipMacros.h */,
 				507CB67F186065EA00A4470F /* ACSideslipPresentAnimation.h */,
 				507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */,
@@ -361,6 +367,7 @@
 			files = (
 				5020D70F186170B2005A2A70 /* ThridViewController.m in Sources */,
 				507CB687186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
+				5020D722186185AF005A2A70 /* ACSideslipTransition.m in Sources */,
 				507CB6BB18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */,
 				507CB68D1860660F00A4470F /* FirstViewController.m in Sources */,
 				507CB65D1860657200A4470F /* AppDelegate.m in Sources */,
@@ -383,6 +390,7 @@
 				507CB68E1860660F00A4470F /* FirstViewController.m in Sources */,
 				507CB6721860657200A4470F /* ACSideslipTransitionTests.m in Sources */,
 				5020D710186170B2005A2A70 /* ThridViewController.m in Sources */,
+				5020D723186185AF005A2A70 /* ACSideslipTransition.m in Sources */,
 				50AB4EEE186072B600DB1C93 /* ACBaseViewController.m in Sources */,
 				507CB688186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
 			);
