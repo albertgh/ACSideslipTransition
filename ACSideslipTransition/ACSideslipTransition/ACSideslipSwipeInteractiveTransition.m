@@ -53,11 +53,10 @@
             if (location.x < 26)
             {
                 self.isFromLeftmost = YES;
+                // Mark the interacting flag. Used when supplying it in delegate.
+                self.interacting = YES;
+                [self.presentingVC dismissViewControllerAnimated:YES completion:nil];
             }
-            
-            // Mark the interacting flag. Used when supplying it in delegate.
-            self.interacting = YES;
-            [self.presentingVC dismissViewControllerAnimated:YES completion:nil];
             break;
         }
             
@@ -79,6 +78,7 @@
         case UIGestureRecognizerStateEnded:
         {
             self.isFromLeftmost = NO;
+            self.interacting = NO;
         }
             
         case UIGestureRecognizerStateCancelled:
