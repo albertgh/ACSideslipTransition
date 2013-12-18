@@ -41,6 +41,7 @@
     
     testTextView.backgroundColor = [UIColor lightGrayColor];
     
+    testTextView.editable = NO;
     
     self.automaticallyAdjustsScrollViewInsets = NO ;
     

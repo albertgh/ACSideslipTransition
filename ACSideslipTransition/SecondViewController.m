@@ -104,7 +104,11 @@
     
     testTextView.backgroundColor = [UIColor lightGrayColor];
     
+    testTextView.editable = NO;
+    
+    // 为什么这里不用 设为 NO，也不会自动延伸？系统自动判断了他上面有别的 UIView 子类？
     //self.automaticallyAdjustsScrollViewInsets = NO ;
+    
     
     [self.view addSubview:testTextView];
     //--------------------------------------------------------------------------------------------//

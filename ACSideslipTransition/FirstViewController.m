@@ -65,6 +65,9 @@ ACModalViewControllerDelegate
 	// Do any additional setup after loading the view.
     
     
+    self.view.backgroundColor = [UIColor yellowColor];
+    
+    
     // 测试 毛玻璃状态栏
     UIToolbar *toolBar = [UIToolbar new];
     toolBar.frame = CGRectMake(0.0f,0.0f,320.0f,20.0f);
