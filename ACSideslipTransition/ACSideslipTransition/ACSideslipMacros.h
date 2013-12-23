@@ -14,7 +14,7 @@
 
 
 #define PRESENT_DURATION            0.5f            // 弹出动画时间
-#define PRESENT_SPRING              0.8f            // 弹性
+#define PRESENT_SPRING              1.0f            // 弹性 (低于 1.0 有一定回弹特效)
 
 
 #define PARALLAX_DX                 -80.f           // 处于下面的视图的位置差，以便模拟相对运动

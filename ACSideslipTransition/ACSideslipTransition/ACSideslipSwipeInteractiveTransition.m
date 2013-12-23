@@ -26,10 +26,8 @@
     self.presentingVC = viewController;
     
     // 如果 present 的是个 UINavigationController , 确保只把手势加给 rootViewController , 避免与其 push 的新视图控制器原生手势冲突
-    if ([viewController isMemberOfClass:[UINavigationController class]])
-    {
-        NSLog(@"navc");
-        
+    if ([viewController isMemberOfClass:[UINavigationController class]]) // 记 isKindOfClass NSClassFromString
+    {        
         UINavigationController *navC = (UINavigationController *)viewController;
         
         UIViewController *navRootVC = [navC.viewControllers objectAtIndex:0];

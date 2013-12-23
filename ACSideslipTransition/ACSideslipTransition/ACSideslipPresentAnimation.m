@@ -25,12 +25,10 @@
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     // 设定 backVC 初始坐标
-    CGRect backVCfinalFrame = [transitionContext finalFrameForViewController:backVC];
-    backVC.view.frame = backVCfinalFrame;
+    backVC.view.frame = screenBounds;
     
     // 设定 frontVC 初始坐标
-    CGRect frontVCfinalFrame = [transitionContext finalFrameForViewController:frontVC];
-    frontVC.view.frame = CGRectOffset(frontVCfinalFrame, screenBounds.size.width, 0);
+    frontVC.view.frame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
     
     
     //** 阴影和遮罩 *********************************************************************************
@@ -75,8 +73,8 @@
                      animations:^{
                          
                          // 动画完成后将达到的最终坐标
-                         backVC.view.frame = CGRectOffset(backVCfinalFrame, PARALLAX_DX, 0.f); // 变化 dx 来做视差效果
-                         frontVC.view.frame = frontVCfinalFrame;
+                         backVC.view.frame = CGRectOffset(screenBounds, PARALLAX_DX, 0.f); // 变化 dx 来做视差效果
+                         frontVC.view.frame = screenBounds;
                          
                          //frontVC.view.layer.shadowOpacity = 0.3f;
                          
