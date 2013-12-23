@@ -8,7 +8,39 @@
 
 #import "ACSideslipMacros.h"
 
+@interface ACSideslipDismissAnimation ()
+
+// 覆盖于处于 下层 和 上层 VC 之间的黑色遮罩
+@property (strong, nonatomic) UIView *blackMask;
+
+// 上层 VC 之下的阴影遮罩
+@property (strong, nonatomic) UIView *shadowMask;
+
+@end
+
+
 @implementation ACSideslipDismissAnimation
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        // 初始化遮罩层
+        self.blackMask = [[UIView alloc] init];
+        self.blackMask.backgroundColor = [UIColor blackColor];
+        
+        // 初始化遮罩层
+        self.shadowMask = [[UIView alloc] init];
+        self.shadowMask.backgroundColor = [UIColor blackColor];
+        self.shadowMask.layer.shadowOffset = CGSizeMake(-3.f, 0.f);
+        self.shadowMask.layer.shadowRadius = 8.0f;
+        self.shadowMask.layer.shadowOpacity = 0.5;
+        self.shadowMask.layer.shadowColor = [UIColor blackColor].CGColor;
+        
+    }
+    return self;
+}
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
 {
@@ -30,18 +62,21 @@
     // 设定 frontVC 初始坐标
     frontVC.view.frame = screenBounds;
     
-    //-- 遮罩 ---------------------------------------------------------------
-    CALayer *blackMask = [[CALayer alloc] init];
-    blackMask.backgroundColor = [UIColor blackColor].CGColor;
-    blackMask.frame = backVC.view.frame;
-    blackMask.opacity = 0.7;
-    //-----------------------------------------------------------------
+    // 黑色遮罩
+    self.blackMask.frame = backVC.view.frame;
+    self.blackMask.alpha = BLACK_MASK_ALPHA_MAX;
+    
+    // 阴影遮罩
+    self.shadowMask.frame = frontVC.view.frame;
+    self.shadowMask.alpha = SHADOW_MASK_ALPHA_MAX;
+
     
     // Add target view to the container, and move it to back.
     UIView *containerView = [transitionContext containerView];
     [containerView addSubview:backVC.view];
     
-    [containerView.layer addSublayer:blackMask];
+    [containerView addSubview:self.blackMask];
+    [containerView addSubview:self.shadowMask];
     
     [containerView addSubview:frontVC.view];
     [containerView sendSubviewToBack:backVC.view];
@@ -50,11 +85,17 @@
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     [UIView animateWithDuration:duration animations:^{
         
+        // 动画完成后将达到的最终坐标
         frontVC.view.frame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
         backVC.view.frame = screenBounds;
         
-        blackMask.frame = screenBounds;
-        blackMask.opacity = 0.2;
+        // 黑色遮罩的位置与 下层的 backVC 保持一致，并在 Dismiss 后消失
+        self.blackMask.frame = backVC.view.frame;
+        self.blackMask.alpha = 0.0f;
+        
+        // 阴影遮罩的位置与 上层的 frontVC 保持一致，并在 Dismiss 后消失
+        self.shadowMask.frame = frontVC.view.frame;
+        self.shadowMask.alpha = 0.0f;
         
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];

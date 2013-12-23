@@ -20,7 +20,12 @@
 @property (nonatomic, assign) BOOL interacting;
 
 
--(void)wireToViewController:(UIViewController *)viewController;
+/**
+ *  添加自定义手势识别
+ *
+ *  @param viewController 需要添加自定义手势识别的视图控制器
+ */
+- (void)addGestureToViewController:(UIViewController *)viewController;
 
 
 @end

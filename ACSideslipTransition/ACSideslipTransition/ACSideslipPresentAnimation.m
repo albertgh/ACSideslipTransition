@@ -8,7 +8,38 @@
 
 #import "ACSideslipMacros.h"
 
+@interface ACSideslipPresentAnimation ()
+
+// 覆盖于处于下层和上层之间的黑色遮罩
+@property (strong, nonatomic) UIView *blackMask;
+
+// 上层 VC 之下的阴影遮罩
+@property (strong, nonatomic) UIView *shadowMask;
+
+@end
+
+
 @implementation ACSideslipPresentAnimation
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        // 初始化遮罩层
+        self.blackMask = [[UIView alloc] init];
+        self.blackMask.backgroundColor = [UIColor blackColor];
+        
+        // 初始化遮罩层
+        self.shadowMask = [[UIView alloc] init];
+        self.shadowMask.backgroundColor = [UIColor blackColor];
+        self.shadowMask.layer.shadowOffset = CGSizeMake(-3.f, 0.f);
+        self.shadowMask.layer.shadowRadius = 8.0f;
+        self.shadowMask.layer.shadowOpacity = 0.5;
+        self.shadowMask.layer.shadowColor = [UIColor blackColor].CGColor;
+    }
+    return self;
+}
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
 {
@@ -30,36 +61,22 @@
     // 设定 frontVC 初始坐标
     frontVC.view.frame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
     
+    // 黑色遮罩
+    self.blackMask.frame = backVC.view.frame;
+    self.blackMask.alpha = 0.0f;
     
-    //** 阴影和遮罩 *********************************************************************************
-    
-    //-- 阴影 --------------------------------------------------------------------------------------
-//    frontVC.view.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    frontVC.view.layer.shadowOffset = CGSizeMake(10.0f,10.0f);
-//    frontVC.view.layer.shadowOpacity = 1.f;
-//    frontVC.view.layer.shadowRadius = 10.0f;
-    
-    // 为什么加了阴影会卡翔，而且动画内也没反应。。
-    
-    //----------------------------------------------------------------------------------------------
-    
-    //-- 遮罩 ---------------------------------------------------------------------------------------
-//    UIView *blackMask = [[UIView alloc]init];
-//    blackMask.backgroundColor = [UIColor blackColor];
-//    blackMask.frame = backVCfinalFrame;
-//    [backVC.view addSubview:blackMask];
-//
-    
-    // 应该要写个带 遮罩属性的 containerView
-    
-    //----------------------------------------------------------------------------------------------
-    
-    //**********************************************************************************************
+    // 阴影遮罩
+    self.shadowMask.frame = frontVC.view.frame;
+    self.shadowMask.alpha = 0.0f;
     
     
     // Add fromVC & toVC 's view to containerView
     UIView *containerView = [transitionContext containerView];
     [containerView addSubview:backVC.view];
+    
+    [containerView addSubview:self.blackMask];
+    [containerView addSubview:self.shadowMask];
+    
     [containerView addSubview:frontVC.view];
     [containerView sendSubviewToBack:backVC.view];
     
@@ -76,7 +93,13 @@
                          backVC.view.frame = CGRectOffset(screenBounds, PARALLAX_DX, 0.f); // 变化 dx 来做视差效果
                          frontVC.view.frame = screenBounds;
                          
-                         //frontVC.view.layer.shadowOpacity = 0.3f;
+                         // 遮罩的位置与 下面的 VC 保持一致，并在 Present 完成后 达到最深色
+                         self.blackMask.frame = backVC.view.frame;
+                         self.blackMask.alpha = BLACK_MASK_ALPHA_MAX;
+                         
+                         // 阴影遮罩的位置与 上层的 frontVC 保持一致，并在 Present 完成后达到最深阴影
+                         self.shadowMask.frame = frontVC.view.frame;
+                         self.shadowMask.alpha = SHADOW_MASK_ALPHA_MAX;
                          
                          
                      } completion:^(BOOL finished) {

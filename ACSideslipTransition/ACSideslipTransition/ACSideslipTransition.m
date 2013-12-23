@@ -25,7 +25,7 @@
 - (void)sideslip:(UIViewController *)toVC from:(UIViewController *)fromVC
 {
     toVC.transitioningDelegate = self;
-    [self.interactiveTransition wireToViewController:toVC];
+    [self.interactiveTransition addGestureToViewController:toVC];
     
     [fromVC presentViewController:toVC animated:YES completion:nil];
 }

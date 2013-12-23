@@ -62,7 +62,7 @@
     
     
     
-    //-- 按钮 ---------------------------------------------------------------
+    //-- 按钮 ---------------------------------------------------------------------------------------
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(100.0, 200.0, 120.0, 40.0);
     button.backgroundColor = [UIColor orangeColor];
@@ -72,8 +72,7 @@
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
-    
-    
+    //---------------------------------------------------------------------------------------------;
 }
 
 - (void)didReceiveMemoryWarning

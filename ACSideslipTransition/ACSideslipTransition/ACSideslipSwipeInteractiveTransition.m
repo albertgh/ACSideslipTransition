@@ -21,32 +21,28 @@
 
 @implementation ACSideslipSwipeInteractiveTransition
 
--(void)wireToViewController:(UIViewController *)viewController
+- (void)addGestureToViewController:(UIViewController *)viewController
 {
+    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    
     self.presentingVC = viewController;
     
     // 如果 present 的是个 UINavigationController , 确保只把手势加给 rootViewController , 避免与其 push 的新视图控制器原生手势冲突
-    if ([viewController isMemberOfClass:[UINavigationController class]]) // 记 isKindOfClass NSClassFromString
+    if ([viewController isMemberOfClass:[UINavigationController class]])
     {        
         UINavigationController *navC = (UINavigationController *)viewController;
         
         UIViewController *navRootVC = [navC.viewControllers objectAtIndex:0];
         
-        [self prepareGestureRecognizerInView:navRootVC.view];
+        [navRootVC.view addGestureRecognizer:gesture];
     }
     else
     {
-        [self prepareGestureRecognizerInView:viewController.view];
+        [viewController.view addGestureRecognizer:gesture];
     }
 }
 
-- (void)prepareGestureRecognizerInView:(UIView*)view
-{
-    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-    [view addGestureRecognizer:gesture];
-}
-
--(CGFloat)completionSpeed
+- (CGFloat)completionSpeed
 {
     return 1 - self.percentComplete;
 }
@@ -57,7 +53,6 @@
     CGPoint location = [gestureRecognizer locationInView:gestureRecognizer.view.superview];
     
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view.superview];
-    
     
     switch (gestureRecognizer.state)
     {
