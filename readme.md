@@ -1,7 +1,7 @@
 # ACSideslipTransition
 
 让 presentViewController 拥有如 pushViewController 的动画和手势支持。 
-
+<img src="https://github.com/albertgh/ACSideslipTransition/raw/master/screenshot.gif"/>
 
 ## Usage
 
