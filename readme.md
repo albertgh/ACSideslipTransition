@@ -10,10 +10,18 @@
 在你要发起 presentViewController 的 VC 导入如下头文件。
 ```Objective-C
 #import "ACSideslipTransition.h"
-
 ```
 
 然后在发起 presentViewController 的事件中添加如下类似代码，
+以弹出新 UIViewController，
+```Objective-C
+SecondViewController *sVC =  [[SecondViewController alloc] init];
+        
+ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
+[transition sideslip:sVC from:self];
+```
+
+或 UINavigationController
 ```Objective-C
 SecondViewController *sVC =  [[SecondViewController alloc] init];
     
@@ -23,15 +31,8 @@ ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
 [transition sideslip:nC from:self];
 ```
 
-或 
-```Objective-C
-SecondViewController *sVC =  [[SecondViewController alloc] init];
-        
-ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
-[transition sideslip:sVC from:self];
-```
 
-## Requirements
+### Requirements
 
 * 项目使用了 ARC
 * 只适用 iOS 7
