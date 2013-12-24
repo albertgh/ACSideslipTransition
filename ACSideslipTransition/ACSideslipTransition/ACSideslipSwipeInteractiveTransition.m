@@ -73,14 +73,15 @@
             if (self.isFromLeftmost)
             {
                 // Calculate the percentage of guesture
-                NSLog(@"ttttt===%f", translation.x);
-                NSLog(@"lllll===%f", location.x);
                 CGFloat percentComplete = (translation.x + 0.f) / ([[UIScreen mainScreen] applicationFrame].size.width - 0.f);
                 
                 // Limit it between 0 and 1
-                //percentComplete = fminf(fmaxf(percentComplete, 0.0), 1.0);
+                percentComplete = fminf(fmaxf(percentComplete, 0.0), 1.0);
                 
-                NSLog(@"%f,percent", percentComplete);
+                //NSLog(@"ttttt===%f", translation.x);
+                //NSLog(@"lllll===%f", location.x);
+                //NSLog(@"%f,percent", percentComplete);
+                
                 self.shouldComplete = (percentComplete > SWIPE_PERCENT);
                 
                 [self updateInteractiveTransition:percentComplete];
