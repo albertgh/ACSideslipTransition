@@ -30,13 +30,15 @@
         self.blackMask = [[UIView alloc] init];
         self.blackMask.backgroundColor = [UIColor blackColor];
         
-        // 初始化遮罩层
+        // 初始化阴影层
         self.shadowMask = [[UIView alloc] init];
         self.shadowMask.backgroundColor = [UIColor blackColor];
-        self.shadowMask.layer.shadowOffset = CGSizeMake(-3.f, 0.f);
-        self.shadowMask.layer.shadowRadius = 8.0f;
-        self.shadowMask.layer.shadowOpacity = 0.5;
+        
         self.shadowMask.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.shadowMask.layer.shadowOpacity = 0.6;
+        self.shadowMask.layer.shadowRadius = 8.0f;
+        self.shadowMask.layer.shadowOffset = CGSizeMake(-4.f, 0.f);
+        self.shadowMask.layer.masksToBounds = NO;
     }
     return self;
 }
@@ -68,6 +70,7 @@
     // 阴影遮罩
     self.shadowMask.frame = frontVC.view.frame;
     self.shadowMask.alpha = 0.0f;
+    self.shadowMask.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.shadowMask.bounds].CGPath;
     
     
     // Add fromVC & toVC 's view to containerView

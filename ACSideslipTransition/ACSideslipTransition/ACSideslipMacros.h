@@ -23,7 +23,7 @@
 #define DISMISS_DURATION            0.3f            // 解散动画时间
 
 
-#define SWIPE_PERCENT               0.6f           // 前视图滑动距离占屏幕多少百分比后松开完成解散视图
+#define SWIPE_PERCENT               0.5f           // 前视图滑动距离占屏幕多少百分比后松开完成解散视图
 
 
 #define BLACK_MASK_ALPHA_MAX        0.2            // 处于 上层 与 下层 之间的黑色遮罩 最大透明度

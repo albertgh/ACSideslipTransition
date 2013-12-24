@@ -13,7 +13,7 @@
 @property (nonatomic, assign) BOOL shouldComplete;
 @property (nonatomic, strong) UIViewController *presentingVC;
 
-/** 是否从最左边触发 （其实也不是最左，因为指肚中点不在最左，系统 push 出的视图控制器，大概是在 20 位置响应） */
+/** 是否从最左边触发 （其实也不是最左，因为指肚中点不在最左，系统 push 出的视图控制器，大概是在 30 位置响应） */
 @property (nonatomic, assign) BOOL isFromLeftmost;
 
 @end
@@ -58,7 +58,7 @@
     {
         case UIGestureRecognizerStateBegan:
         {
-            if (location.x < 26)
+            if (location.x < 30.f)
             {
                 self.isFromLeftmost = YES;
                 // Mark the interacting flag. Used when supplying it in delegate.
@@ -73,12 +73,17 @@
             if (self.isFromLeftmost)
             {
                 // Calculate the percentage of guesture
-                CGFloat fraction = translation.x / [[UIScreen mainScreen] applicationFrame].size.width;
-                //Limit it between 0 and 1
-                fraction = fminf(fmaxf(fraction, 0.0), 1.0);
-                self.shouldComplete = (fraction > SWIPE_PERCENT);
+                NSLog(@"ttttt===%f", translation.x);
+                NSLog(@"lllll===%f", location.x);
+                CGFloat percentComplete = (translation.x + 0.f) / ([[UIScreen mainScreen] applicationFrame].size.width - 0.f);
                 
-                [self updateInteractiveTransition:fraction];
+                // Limit it between 0 and 1
+                //percentComplete = fminf(fmaxf(percentComplete, 0.0), 1.0);
+                
+                NSLog(@"%f,percent", percentComplete);
+                self.shouldComplete = (percentComplete > SWIPE_PERCENT);
+                
+                [self updateInteractiveTransition:percentComplete];
             }
             break;
         }
