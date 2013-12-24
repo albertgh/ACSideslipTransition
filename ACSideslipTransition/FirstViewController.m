@@ -22,7 +22,7 @@
 
 #pragma mark Action method
 
--(void) buttonClicked:(id)sender
+- (void)buttonClicked:(id)sender
 {
     SecondViewController *sVC =  [[SecondViewController alloc] init];
     

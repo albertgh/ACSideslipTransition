@@ -1,6 +1,62 @@
 # ACSideslipTransition
 
-## 练习 iOS7 自定义视图切换
+让 presentViewController 拥有如 pushViewController 的动画和手势支持。 
 
-### 待完善
 
+## Usage
+
+将包含9个文件的 ACSideslipTransition 文件夹拖入你的项目中，
+
+在你要发起 presentViewController 的 VC 导入如下头文件。
+```Objective-C
+#import "ACSideslipTransition.h"
+
+```
+
+然后在发起 presentViewController 的事件中添加如下类似代码，
+```Objective-C
+SecondViewController *sVC =  [[SecondViewController alloc] init];
+    
+UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
+    
+ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
+[transition sideslip:nC from:self];
+```
+
+或 
+```Objective-C
+SecondViewController *sVC =  [[SecondViewController alloc] init];
+        
+ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
+[transition sideslip:sVC from:self];
+```
+
+## Requirements
+
+* 项目使用了 ARC
+* 只适用 iOS 7
+
+
+
+### LICENSE
+
+最近好像比较流行用这个协议，
+
+WTFPL 
+
+```
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+```
