@@ -25,6 +25,7 @@
 - (void)sideslip:(UIViewController *)toVC from:(UIViewController *)fromVC
 {
     toVC.transitioningDelegate = self;
+    
     [self.interactiveTransition addGestureToViewController:toVC];
     
     [fromVC presentViewController:toVC animated:YES completion:nil];
@@ -57,8 +58,9 @@
     return self.dismissAnimation;
 }
 
-- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
+- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator
 {
+    // Return nil if we are not interactive
     return self.interactiveTransition.interacting ? self.interactiveTransition : nil;
 }
 
