@@ -176,6 +176,12 @@
 
 #pragma mark - 根据移动距离处理交互
 
+/** 触摸结束后的惯性 */
+//- (CGFloat)completionSpeed
+//{
+//    return 1 - self.percentComplete;
+//}
+
 /** 有距离移动变化时的响应 */
 - (void)updateTranslationWith:(CGFloat)distance
 {
@@ -213,7 +219,7 @@
     
     
     // Do animate
-    [UIView animateWithDuration:0.2
+    [UIView animateWithDuration:0.3
                           delay:0.0
          usingSpringWithDamping:PRESENT_SPRING
           initialSpringVelocity:0.0
