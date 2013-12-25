@@ -137,6 +137,12 @@
 
 #pragma mark - UIViewControllerInteractiveTransitioning Methods
 
+/** 触摸结束后的惯性 */
+//- (CGFloat)completionSpeed
+//{
+//    return 1 - self.percentComplete;
+//}
+
 -(void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     // Maintain reference to context
@@ -175,12 +181,6 @@
 }
 
 #pragma mark - 根据移动距离处理交互
-
-/** 触摸结束后的惯性 */
-//- (CGFloat)completionSpeed
-//{
-//    return 1 - self.percentComplete;
-//}
 
 /** 有距离移动变化时的响应 */
 - (void)updateTranslationWith:(CGFloat)distance
