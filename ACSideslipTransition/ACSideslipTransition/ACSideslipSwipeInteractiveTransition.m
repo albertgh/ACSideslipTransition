@@ -22,13 +22,10 @@
 /** 上层 VC 之下的阴影遮罩 */
 @property (strong, nonatomic) UIView *shadowMask;
 
-
 @end
 
 
 @implementation ACSideslipSwipeInteractiveTransition
-
-#pragma mark - Init Method
 
 - (id)init
 {
@@ -140,11 +137,6 @@
 
 #pragma mark - UIViewControllerInteractiveTransitioning Methods
 
-//- (CGFloat)completionSpeed
-//{
-//    return 1 - self.percentComplete;
-//}
-
 -(void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     // Maintain reference to context
@@ -181,7 +173,6 @@
     [containerView addSubview:frontVC.view];
     [containerView sendSubviewToBack:backVC.view];
 }
-
 
 #pragma mark - 根据移动距离处理交互
 
@@ -222,7 +213,7 @@
     
     
     // Do animate
-    [UIView animateWithDuration:0.1
+    [UIView animateWithDuration:0.2
                           delay:0.0
          usingSpringWithDamping:PRESENT_SPRING
           initialSpringVelocity:0.0
@@ -282,6 +273,5 @@
     }];
 
 }
-
 
 @end

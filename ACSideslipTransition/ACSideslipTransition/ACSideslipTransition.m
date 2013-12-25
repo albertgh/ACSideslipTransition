@@ -20,19 +20,6 @@
 
 @implementation ACSideslipTransition
 
-#pragma mark - Public Method
-
-- (void)sideslip:(UIViewController *)toVC from:(UIViewController *)fromVC
-{
-    toVC.transitioningDelegate = self;
-    
-    [self.interactiveTransition addGestureToViewController:toVC];
-    
-    [fromVC presentViewController:toVC animated:YES completion:nil];
-}
-
-#pragma mark - Init Method
-
 - (id)init
 {
     self = [super init];
@@ -45,6 +32,16 @@
     return self;
 }
 
+#pragma mark - Public Method
+
+- (void)sideslip:(UIViewController *)toVC from:(UIViewController *)fromVC
+{
+    toVC.transitioningDelegate = self;
+    
+    [self.interactiveTransition addGestureToViewController:toVC];
+    
+    [fromVC presentViewController:toVC animated:YES completion:nil];
+}
 
 #pragma mark - Transition Delegate
 
@@ -63,6 +60,5 @@
     // Return nil if we are not interactive
     return self.interactiveTransition.interacting ? self.interactiveTransition : nil;
 }
-
 
 @end
