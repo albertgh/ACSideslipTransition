@@ -98,7 +98,7 @@
     if (!self.navigationBarTitleTextTintColor)
     {
         // [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-        // DLog(@"%@", self.navigationController.navigationBar.titleTextAttributes);
+        // NSLog(@"%@", self.navigationController.navigationBar.titleTextAttributes);
         // 由于导航栏 标题 的文字颜色是通过字典设定, 取出为 { NSColor = "UIDeviceRGBColorSpace 1 1 1 1"; }
         self.navigationController.navigationBar.titleTextAttributes = self.navigationBarTitleTextAttributes;
     }

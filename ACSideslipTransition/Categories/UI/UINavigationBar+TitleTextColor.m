@@ -15,7 +15,6 @@
     NSDictionary *navBarTitleTextAttributes =
     [NSDictionary dictionaryWithObjectsAndKeys:
      
-     // 形参
      theColor,
      
      NSForegroundColorAttributeName,

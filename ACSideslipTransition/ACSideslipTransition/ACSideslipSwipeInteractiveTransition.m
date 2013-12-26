@@ -95,20 +95,23 @@
             
         case UIGestureRecognizerStateChanged:
         {
-            // Calculate the percentage of guesture
-            CGFloat percentComplete = (translation.x + 0.f) / ([[UIScreen mainScreen] applicationFrame].size.width - 0.f);
-            
-            // Limit it between 0 and 1
-            percentComplete = fminf(fmaxf(percentComplete, 0.0), 1.0);
-            
-            //NSLog(@"ttttt===%f", translation.x);
-            //NSLog(@"%f,percent", percentComplete);
-            
-            self.shouldComplete = (percentComplete > SWIPE_PERCENT);
-            
-            [self updateInteractiveTransition:percentComplete];
-            
-            [self updateTranslationWith:translation.x];
+            if (translation.x > 0)  /** 防止拖拽越界 */
+            {
+                // Calculate the percentage of guesture
+                CGFloat percentComplete = (translation.x + 0.f) / ([[UIScreen mainScreen] applicationFrame].size.width - 0.f);
+                
+                // Limit it between 0 and 1
+                percentComplete = fminf(fmaxf(percentComplete, 0.0), 1.0);
+                
+                //NSLog(@"ttttt===%f", translation.x);
+                //NSLog(@"%f,percent", percentComplete);
+                
+                self.shouldComplete = (percentComplete > SWIPE_PERCENT);
+                
+                [self updateInteractiveTransition:percentComplete];
+                
+                [self updateTranslationWith:translation.x];
+            }
             
             break;
         }
@@ -136,12 +139,6 @@
 }
 
 #pragma mark - UIViewControllerInteractiveTransitioning Methods
-
-/** 触摸结束后的惯性 */
-//- (CGFloat)completionSpeed
-//{
-//    return 1 - self.percentComplete;
-//}
 
 -(void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
@@ -217,9 +214,9 @@
     // Get mainScreen bounds
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
-    
+
     // Do animate
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:(CANCEL_DURATION * self.percentComplete)
                           delay:0.0
          usingSpringWithDamping:PRESENT_SPRING
           initialSpringVelocity:0.0
@@ -260,7 +257,7 @@
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     // Do animate
-    [UIView animateWithDuration:0.1 animations:^{
+    [UIView animateWithDuration:(FINISH_DURATION * (1 - self.percentComplete)) animations:^{
         
         // 动画完成后将达到的最终坐标
         frontVC.view.frame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
