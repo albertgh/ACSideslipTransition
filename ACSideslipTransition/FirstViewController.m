@@ -14,6 +14,8 @@
 
 @interface FirstViewController () <ACModalViewControllerDelegate>
 
+@property (strong, nonatomic) ACSideslipTransition *sideslipTransition;
+
 @end
 
 
@@ -30,12 +32,20 @@
     
     UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
     
-    ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
-    [transition sideslip:nC from:self];
+    [self.sideslipTransition sideslip:nC from:self];
 }
 
 
 #pragma mark - LifeCycle
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.sideslipTransition = [ACSideslipTransition new];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {

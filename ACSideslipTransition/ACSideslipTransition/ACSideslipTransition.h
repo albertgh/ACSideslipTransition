@@ -16,6 +16,6 @@
  *  @param toVC   新的视图控制器
  *  @param fromVC 当前视图控制器
  */
-- (void)sideslip:(UIViewController *)toVC from:(UIViewController *)fromVC;
+- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC;
 
 @end

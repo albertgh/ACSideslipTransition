@@ -27,8 +27,8 @@ SecondViewController *sVC =  [[SecondViewController alloc] init];
     
 UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
     
-ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
-[transition sideslip:nC from:self];
+self.sideslipTransition = [[ACSideslipTransition alloc] init];
+[self.sideslipTransition sideslip:nC from:self];
 ```
 
 

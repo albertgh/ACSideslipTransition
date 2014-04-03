@@ -34,13 +34,13 @@
 
 #pragma mark - Public Method
 
-- (void)sideslip:(UIViewController *)toVC from:(UIViewController *)fromVC
+- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC
 {
-    toVC.transitioningDelegate = self;
+    newVC.transitioningDelegate = self;
     
-    [self.interactiveTransition addGestureToViewController:toVC];
+    [self.interactiveTransition addGestureToViewController:newVC];
     
-    [fromVC presentViewController:toVC animated:YES completion:nil];
+    [oldVC presentViewController:newVC animated:YES completion:nil];
 }
 
 #pragma mark - Transition Delegate
