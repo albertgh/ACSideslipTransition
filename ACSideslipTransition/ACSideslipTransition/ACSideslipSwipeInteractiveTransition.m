@@ -66,10 +66,14 @@
         UIViewController *navRootVC = [navC.viewControllers objectAtIndex:0];
         
         [navRootVC.view addGestureRecognizer:gestureRecognizer];
+        
+        self.finishDelegate = (UIViewController<ACSideslipSwipeInteractiveTransitionFinishedDelegate> *)navRootVC;
     }
     else
     {
         [viewController.view addGestureRecognizer:gestureRecognizer];
+        
+        self.finishDelegate = (UIViewController<ACSideslipSwipeInteractiveTransitionFinishedDelegate> *)viewController;
     }
 }
 
@@ -95,10 +99,10 @@
             
         case UIGestureRecognizerStateChanged:
         {
-            if (translation.x > 0)  /** 防止拖拽越界 */
+            if (translation.x > 0)  /** 防止拖拽超过屏幕左边 */
             {
                 // Calculate the percentage of guesture
-                CGFloat percentComplete = (translation.x + 0.f) / ([[UIScreen mainScreen] applicationFrame].size.width - 0.f);
+                CGFloat percentComplete = translation.x / ([[UIScreen mainScreen] applicationFrame].size.width);
                 
                 // Limit it between 0 and 1
                 percentComplete = fminf(fmaxf(percentComplete, 0.0), 1.0);
@@ -112,7 +116,6 @@
                 
                 [self updateTranslationWith:translation.x];
             }
-            
             break;
         }
             
@@ -122,13 +125,33 @@
             self.interacting = NO;
             
             // Gesture over. Check if the transition should finish or not
-            if (!self.shouldComplete || gestureRecognizer.state == UIGestureRecognizerStateCancelled)
+            
+            // 取得手指离开屏幕时的移动速度
+            CGPoint velocity = [gestureRecognizer velocityInView:gestureRecognizer.view.superview];
+            CGFloat xSpeed = velocity.x;
+            
+            //NSLog(@"最后速度%f", xSpeed);
+            //NSLog(@"剩余距离%f", (([[UIScreen mainScreen] applicationFrame].size.width) - translation.x));
+            //NSLog(@"动画时间%f", (([[UIScreen mainScreen] applicationFrame].size.width) - translation.x) / xSpeed);
+            
+            if (xSpeed > 600)
             {
-                [self cancelTheTranslation];
+                CGFloat leftDistance = ([[UIScreen mainScreen] applicationFrame].size.width) - translation.x;
+                NSTimeInterval leftTime = leftDistance / (xSpeed * 1.6); // 1.6 倍数随便设的，，看起来差不多了，因为不只是手指离开时的速度问题，还有加速度的惯性问题，单纯只用离开时速度算，手感就与现实物理世界感觉差距太大了，随便给个大一点速度凑乎了。
+                
+                [self finishTranslationAnimationWithDuration:leftTime];
             }
             else
             {
-                [self finishTheTranslation];
+                if (!self.shouldComplete || gestureRecognizer.state == UIGestureRecognizerStateCancelled)
+                {
+                    [self cancelTheTranslation];
+                }
+                else
+                {
+                    [self finishTranslation];
+                }
+                
             }
             break;
         }
@@ -246,7 +269,15 @@
 }
 
 /** 触摸结束后，达到指定百分比，完成剩余动画 */
-- (void)finishTheTranslation
+- (void)finishTranslation
+{
+    // 按剩余百分比计算完成动画时间
+    NSTimeInterval leftTime = (FINISH_DURATION * (1 - self.percentComplete));
+    [self finishTranslationAnimationWithDuration:leftTime];
+}
+
+/** 按指定时间完成结束动画 */
+- (void)finishTranslationAnimationWithDuration:(NSTimeInterval)duration
 {
     [self finishInteractiveTransition];
     
@@ -257,7 +288,7 @@
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     // Do animate
-    [UIView animateWithDuration:(FINISH_DURATION * (1 - self.percentComplete)) animations:^{
+    [UIView animateWithDuration:duration animations:^{
         
         // 动画完成后将达到的最终坐标
         frontVC.view.frame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
@@ -274,7 +305,11 @@
     } completion:^(BOOL finished) {
         [self.context completeTransition:YES];
     }];
-
+    
+    if (nil != self.finishDelegate && [self.finishDelegate respondsToSelector:@selector(swipeInteractiveTransitionDidFinished)])
+    {
+        [self.finishDelegate swipeInteractiveTransitionDidFinished];
+    }
 }
 
 @end

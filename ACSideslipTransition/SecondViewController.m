@@ -9,21 +9,28 @@
 #import "SecondViewController.h"
 #import "ThridViewController.h"
 
-@interface SecondViewController ()
+#import "ACSideslipSwipeInteractiveTransitionFinishedDelegate.h"
+
+@interface SecondViewController () <ACSideslipSwipeInteractiveTransitionFinishedDelegate>
 
 @end
 
 
-
 @implementation SecondViewController
 
+#pragma mark - ACSideslipSwipeInteractiveTransitionFinishedDelegate
+
+- (void)swipeInteractiveTransitionDidFinished
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
+
+#pragma mark - Action Methods
 
 - (void)leftBarButtonItemPressed:(id)sender
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(modalViewControllerDoDismiss:)])
-    {
-        [self.delegate modalViewControllerDoDismiss:self];
-    }
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)buttonClicked:(id)sender
@@ -32,32 +39,38 @@
     [self.navigationController pushViewController:tVC animated:YES];
 }
 
+#pragma mark - Life Cycle
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        // Custom initialization
+        self.title = @"Second VC";
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    
     //-- 状态栏文字颜色 ------------------------------------------------------------------------------
-    self.lightStatusBarColor = YES;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //---------------------------------------------------------------------------------------------;
     
-    
-    //-- 导航栏各种着色 ------------------------------------------------------------------------------
-    
-    // 导航栏背景色
-    self.navigationBarBarTintColor = [UIColor colorWithRed:100  / 255.f green:180 / 255.f blue:250 / 255.f alpha:1.f];
-    
-    // 导航栏 Title 文字 颜色
-    self.navigationBarTitleTextTintColor = [UIColor whiteColor];
-    
-    // 互动按钮 文字 颜色
-    self.navigationBarActionItemTintColor = [UIColor whiteColor];
+    //-- 导航栏三色 ------------------------------------------------------------------------------
+    [self ac_setNavigationBarColorsWithTitleColor:[UIColor whiteColor]
+                                         barColor:[UIColor colorWithRed:100 / 255.f
+                                                                  green:180 / 255.f
+                                                                   blue:250 / 255.f
+                                                                  alpha:1.f]
+                                      actionColor:[UIColor whiteColor]];
     //---------------------------------------------------------------------------------------------;
     
-    self.title = @"Second VC";
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     //-- leftItem ----------------------------------------------------------------------------------
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];

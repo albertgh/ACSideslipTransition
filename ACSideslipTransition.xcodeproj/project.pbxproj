@@ -37,10 +37,7 @@
 		507CB68E1860660F00A4470F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68A1860660F00A4470F /* FirstViewController.m */; };
 		507CB68F1860660F00A4470F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68C1860660F00A4470F /* SecondViewController.m */; };
 		507CB6901860660F00A4470F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68C1860660F00A4470F /* SecondViewController.m */; };
-		507CB6BB18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */; };
-		507CB6BC18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */; };
-		50AB4EED186072B600DB1C93 /* ACBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */; };
-		50AB4EEE186072B600DB1C93 /* ACBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */; };
+		76CECC0219791BD0000453FB /* UIViewController+NavigationBarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,11 +84,9 @@
 		507CB68A1860660F00A4470F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		507CB68B1860660F00A4470F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		507CB68C1860660F00A4470F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		507CB6921860666E00A4470F /* ACModalViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACModalViewControllerDelegate.h; sourceTree = "<group>"; };
-		507CB6A718606F5200A4470F /* UINavigationBar+TitleTextColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+TitleTextColor.h"; sourceTree = "<group>"; };
-		507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+TitleTextColor.m"; sourceTree = "<group>"; };
-		50AB4EEB186072B600DB1C93 /* ACBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACBaseViewController.h; sourceTree = "<group>"; };
-		50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACBaseViewController.m; sourceTree = "<group>"; };
+		76CECC0019791BD0000453FB /* UIViewController+NavigationBarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBarColors.h"; sourceTree = "<group>"; };
+		76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBarColors.m"; sourceTree = "<group>"; };
+		76CECC0319792165000453FB /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACSideslipSwipeInteractiveTransitionFinishedDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +155,8 @@
 		507CB6521860657200A4470F /* ACSideslipTransition */ = {
 			isa = PBXGroup;
 			children = (
-				50AB4EE8186072B500DB1C93 /* Custom */,
 				507CB69A18606F5200A4470F /* Categories */,
 				507CB67B186065EA00A4470F /* ACSideslipTransition */,
-				507CB6921860666E00A4470F /* ACModalViewControllerDelegate.h */,
 				507CB65B1860657200A4470F /* AppDelegate.h */,
 				507CB65C1860657200A4470F /* AppDelegate.m */,
 				507CB6891860660F00A4470F /* FirstViewController.h */,
@@ -220,6 +213,7 @@
 				507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */,
 				507CB681186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.h */,
 				507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */,
+				76CECC0319792165000453FB /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */,
 			);
 			path = ACSideslipTransition;
 			sourceTree = "<group>";
@@ -227,43 +221,10 @@
 		507CB69A18606F5200A4470F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				507CB69B18606F5200A4470F /* UI */,
+				76CECC0019791BD0000453FB /* UIViewController+NavigationBarColors.h */,
+				76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */,
 			);
 			path = Categories;
-			sourceTree = "<group>";
-		};
-		507CB69B18606F5200A4470F /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				507CB6A718606F5200A4470F /* UINavigationBar+TitleTextColor.h */,
-				507CB6A818606F5200A4470F /* UINavigationBar+TitleTextColor.m */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		50AB4EE8186072B500DB1C93 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				50AB4EE9186072B600DB1C93 /* UI */,
-			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
-		50AB4EE9186072B600DB1C93 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				50AB4EEA186072B600DB1C93 /* BaseViewController */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		50AB4EEA186072B600DB1C93 /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				50AB4EEB186072B600DB1C93 /* ACBaseViewController.h */,
-				50AB4EEC186072B600DB1C93 /* ACBaseViewController.m */,
-			);
-			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,14 +329,13 @@
 				5020D70F186170B2005A2A70 /* ThridViewController.m in Sources */,
 				507CB687186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
 				5020D722186185AF005A2A70 /* ACSideslipTransition.m in Sources */,
-				507CB6BB18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */,
 				507CB68D1860660F00A4470F /* FirstViewController.m in Sources */,
 				507CB65D1860657200A4470F /* AppDelegate.m in Sources */,
 				507CB68F1860660F00A4470F /* SecondViewController.m in Sources */,
+				76CECC0219791BD0000453FB /* UIViewController+NavigationBarColors.m in Sources */,
 				507CB685186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */,
 				507CB6591860657200A4470F /* main.m in Sources */,
 				507CB683186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */,
-				50AB4EED186072B600DB1C93 /* ACBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507CB6BC18606F5200A4470F /* UINavigationBar+TitleTextColor.m in Sources */,
 				507CB6901860660F00A4470F /* SecondViewController.m in Sources */,
 				507CB684186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */,
 				507CB686186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */,
@@ -391,7 +350,6 @@
 				507CB6721860657200A4470F /* ACSideslipTransitionTests.m in Sources */,
 				5020D710186170B2005A2A70 /* ThridViewController.m in Sources */,
 				5020D723186185AF005A2A70 /* ACSideslipTransition.m in Sources */,
-				50AB4EEE186072B600DB1C93 /* ACBaseViewController.m in Sources */,
 				507CB688186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

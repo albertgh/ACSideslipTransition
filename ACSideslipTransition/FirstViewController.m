@@ -8,11 +8,10 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-#import "ACModalViewControllerDelegate.h"
 #import "ACSideslipTransition.h"
 
 
-@interface FirstViewController () <ACModalViewControllerDelegate>
+@interface FirstViewController ()
 
 @property (strong, nonatomic) ACSideslipTransition *sideslipTransition;
 
@@ -27,8 +26,6 @@
 - (void)buttonClicked:(id)sender
 {
     SecondViewController *sVC =  [[SecondViewController alloc] init];
-    
-    sVC.delegate = self;
     
     UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
     
@@ -52,6 +49,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     
     self.view.backgroundColor = [UIColor yellowColor];
     
@@ -89,12 +87,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-- (void)modalViewControllerDoDismiss:(UIViewController *)viewController
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

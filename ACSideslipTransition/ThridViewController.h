@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 Albert Chu. All rights reserved.
 //
 
-#import "ACBaseViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface ThridViewController : ACBaseViewController
+@interface ThridViewController : UIViewController
 
 @end

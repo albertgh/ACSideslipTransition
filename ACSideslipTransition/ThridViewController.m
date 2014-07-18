@@ -15,18 +15,25 @@
 
 @implementation ThridViewController
 
+#pragma mark - Life Cycle
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        // Custom initialization
+        self.title = @"Thrid VC";
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    // 导航栏背景色，不设定则会继承前一个颜色
-    self.navigationBarBarTintColor = [UIColor colorWithRed:116  / 255.f green:220 / 255.f blue:80 / 255.f alpha:1.f];
-    
-    
-    self.title = @"Thrid VC";
-        
+    self.view.backgroundColor = [UIColor whiteColor];        
 }
 
 

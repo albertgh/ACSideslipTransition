@@ -12,6 +12,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ACSideslipSwipeInteractiveTransitionFinishedDelegate.h"
+
 @interface ACSideslipSwipeInteractiveTransition : UIPercentDrivenInteractiveTransition
 
 /**
@@ -26,6 +28,10 @@
  *  @param viewController 需要添加自定义手势识别的视图控制器
  */
 - (void)addGestureToViewController:(UIViewController *)viewController;
+
+
+/** 手势成功完成 Dismiss 回调代理对象 */
+@property (nonatomic, assign) UIViewController <ACSideslipSwipeInteractiveTransitionFinishedDelegate> *finishDelegate;
 
 
 @end

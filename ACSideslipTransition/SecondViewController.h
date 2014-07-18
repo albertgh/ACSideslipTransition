@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ACModalViewControllerDelegate.h"
-#import "ACBaseViewController.h"
 
-@interface SecondViewController : ACBaseViewController
-
-@property (nonatomic, weak) id<ACModalViewControllerDelegate> delegate;
+@interface SecondViewController : UIViewController
 
 @end
