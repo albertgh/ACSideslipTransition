@@ -31,12 +31,14 @@ self.sideslipTransition = [[ACSideslipTransition alloc] init];
 [self.sideslipTransition sideslip:nC from:self];
 ```
 
-如果需要滑动关闭完成后的回调（比如需要在弹出模态视图控制器的根视图上控制状态栏颜色变化时）
-导入协议
+如果需要使用滑动关闭完成后的回调（比如需要在关闭时改变状态栏的颜色变化时）
+
+在弹出的根视图中导入
 ```Objective-C
 #import "ACSideslipSwipeInteractiveTransitionFinishedDelegate.h"
 ```
-并让弹出的根视图控制器实现 'ACSideslipSwipeInteractiveTransitionFinishedDelegate' 协议
+并实现 'ACSideslipSwipeInteractiveTransitionFinishedDelegate' 协议
+
 然后就可以在完成回调里做相应操作了，如下。
 
 ```Objective-C
@@ -61,5 +63,3 @@ self.sideslipTransition = [[ACSideslipTransition alloc] init];
 
 ######WTFPL 
 
-
-WTFPL 
