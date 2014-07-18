@@ -5,7 +5,7 @@
 
 ## Usage
 
-将包含9个文件的 ACSideslipTransition 文件夹拖入你的项目中，
+将包含 10 个文件的 ACSideslipTransition 文件夹拖入你的项目中，
 
 在你要发起 presentViewController 的 VC 导入如下头文件。
 ```Objective-C
@@ -31,33 +31,35 @@ self.sideslipTransition = [[ACSideslipTransition alloc] init];
 [self.sideslipTransition sideslip:nC from:self];
 ```
 
+如果需要滑动关闭完成后的回调（比如需要在弹出模态视图控制器的根视图上控制状态栏颜色变化时）
+导入协议
+```Objective-C
+#import "ACSideslipSwipeInteractiveTransitionFinishedDelegate.h"
+```
+并让弹出的根视图控制器实现 'ACSideslipSwipeInteractiveTransitionFinishedDelegate' 协议
+然后就可以在完成回调里做相应操作了，如下。
+
+```Objective-C
+#pragma mark - ACSideslipSwipeInteractiveTransitionFinishedDelegate
+
+- (void)swipeInteractiveTransitionDidFinished
+{
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
+```
+
+
 
 ### Requirements
 
-* 项目使用了 ARC
-* 只适用 iOS 7
+* ARC
+* iOS 7 +
 
 
 
-### LICENSE
+#### License
 
-最近好像比较流行用这个协议，
+######WTFPL 
+
 
 WTFPL 
-
-```
-            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-                    Version 2, December 2004
-
- Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
-
- Everyone is permitted to copy and distribute verbatim or modified
- copies of this license document, and changing it is allowed as long
- as the name is changed.
-
-            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
-  0. You just DO WHAT THE FUCK YOU WANT TO.
-
-```
