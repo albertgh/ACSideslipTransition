@@ -6,7 +6,9 @@
 //  Copyright (c) 2013年 Albert Chu. All rights reserved.
 //
 
-#import "ACSideslipMacros.h"
+#import "ACSideslipDismissAnimation.h"
+
+#import "ACSideslipConstants.h"
 
 @interface ACSideslipDismissAnimation ()
 
@@ -36,8 +38,8 @@
         
         self.shadowMask.layer.shadowColor = [UIColor blackColor].CGColor;
         self.shadowMask.layer.shadowOpacity = 0.6;
-        self.shadowMask.layer.shadowRadius = 8.0f;
-        self.shadowMask.layer.shadowOffset = CGSizeMake(-4.f, 0.f);
+        self.shadowMask.layer.shadowRadius = 8.0;
+        self.shadowMask.layer.shadowOffset = CGSizeMake(-4.0, 0.0);
         self.shadowMask.layer.masksToBounds = NO;
     }
     return self;
@@ -45,32 +47,33 @@
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-    return DISMISS_DURATION;
+    return ACST_DismissDuration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-    // 靠，from 啊 to 容易搞混的，系统是正序思路，Dismiss 两个 Key 与 Present 是相反的。我还是习惯固定唱名。。。
     UIViewController *frontVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *backVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    // Get mainScreen bounds
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     // 设定 backVC 初始坐标
-    backVC.view.frame = CGRectOffset(screenBounds, PARALLAX_DX, 0.f);     // 初始位置 dx 有偏移 与 Present 中同步视差
+    backVC.view.frame = CGRectOffset(screenBounds, ACST_HorizontalParallax, 0.0);     // 初始位置 dx 有偏移 与 Present 中同步视差
     
     // 设定 frontVC 初始坐标
     frontVC.view.frame = screenBounds;
     
     // 黑色遮罩
     self.blackMask.frame = backVC.view.frame;
-    self.blackMask.alpha = BLACK_MASK_ALPHA_MAX;
+    self.blackMask.alpha = ACST_BlackMaskMaxAlpha;
     
     // 阴影遮罩
     self.shadowMask.frame = frontVC.view.frame;
-    self.shadowMask.alpha = SHADOW_MASK_ALPHA_MAX;
+    self.shadowMask.alpha = ACST_ShadowmaskMaxAlpha;
     self.shadowMask.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.shadowMask.bounds].CGPath;
+    
+    self.blackMask.hidden = NO;
+    self.shadowMask.hidden = NO;
 
     
     // Add target view to the container, and move it to back.
@@ -93,13 +96,15 @@
         
         // 黑色遮罩的位置与 下层的 backVC 保持一致，并在 Dismiss 后消失
         self.blackMask.frame = backVC.view.frame;
-        self.blackMask.alpha = 0.0f;
+        self.blackMask.alpha = 0.0;
         
         // 阴影遮罩的位置与 上层的 frontVC 保持一致，并在 Dismiss 后消失
         self.shadowMask.frame = frontVC.view.frame;
-        self.shadowMask.alpha = 0.0f;
+        self.shadowMask.alpha = 0.0;
         
     } completion:^(BOOL finished) {
+        self.blackMask.hidden = YES;
+        self.shadowMask.hidden = YES;
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
 }

@@ -75,7 +75,7 @@
 		507CB6711860657200A4470F /* ACSideslipTransitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACSideslipTransitionTests.m; sourceTree = "<group>"; };
 		507CB67C186065EA00A4470F /* ACSideslipDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipDismissAnimation.h; sourceTree = "<group>"; };
 		507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSideslipDismissAnimation.m; sourceTree = "<group>"; };
-		507CB67E186065EA00A4470F /* ACSideslipMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipMacros.h; sourceTree = "<group>"; };
+		507CB67E186065EA00A4470F /* ACSideslipConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipConstants.h; sourceTree = "<group>"; };
 		507CB67F186065EA00A4470F /* ACSideslipPresentAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipPresentAnimation.h; sourceTree = "<group>"; };
 		507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSideslipPresentAnimation.m; sourceTree = "<group>"; };
 		507CB681186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSideslipSwipeInteractiveTransition.h; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		507CB68C1860660F00A4470F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		76CECC0019791BD0000453FB /* UIViewController+NavigationBarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBarColors.h"; sourceTree = "<group>"; };
 		76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBarColors.m"; sourceTree = "<group>"; };
-		76CECC0319792165000453FB /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACSideslipSwipeInteractiveTransitionFinishedDelegate.h; sourceTree = "<group>"; };
+		76FFFF391A0221E200AD5855 /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACSideslipSwipeInteractiveTransitionFinishedDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,16 +204,16 @@
 		507CB67B186065EA00A4470F /* ACSideslipTransition */ = {
 			isa = PBXGroup;
 			children = (
+				507CB67E186065EA00A4470F /* ACSideslipConstants.h */,
 				5020D720186185AF005A2A70 /* ACSideslipTransition.h */,
 				5020D721186185AF005A2A70 /* ACSideslipTransition.m */,
-				507CB67E186065EA00A4470F /* ACSideslipMacros.h */,
 				507CB67F186065EA00A4470F /* ACSideslipPresentAnimation.h */,
 				507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */,
 				507CB67C186065EA00A4470F /* ACSideslipDismissAnimation.h */,
 				507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */,
+				76FFFF391A0221E200AD5855 /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */,
 				507CB681186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.h */,
 				507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */,
-				76CECC0319792165000453FB /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */,
 			);
 			path = ACSideslipTransition;
 			sourceTree = "<group>";

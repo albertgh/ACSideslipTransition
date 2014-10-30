@@ -6,7 +6,9 @@
 //  Copyright (c) 2013年 Albert Chu. All rights reserved.
 //
 
-#import "ACSideslipMacros.h"
+#import "ACSideslipSwipeInteractiveTransition.h"
+
+#import "ACSideslipConstants.h"
 
 @interface ACSideslipSwipeInteractiveTransition ()
 
@@ -42,8 +44,8 @@
         
         self.shadowMask.layer.shadowColor = [UIColor blackColor].CGColor;
         self.shadowMask.layer.shadowOpacity = 0.6;
-        self.shadowMask.layer.shadowRadius = 8.0f;
-        self.shadowMask.layer.shadowOffset = CGSizeMake(-4.f, 0.f);
+        self.shadowMask.layer.shadowRadius = 8.0;
+        self.shadowMask.layer.shadowOffset = CGSizeMake(-4.0, 0.0);
         self.shadowMask.layer.masksToBounds = NO;
     }
     return self;
@@ -53,7 +55,8 @@
 
 - (void)addGestureToViewController:(UIViewController *)viewController
 {
-    UIScreenEdgePanGestureRecognizer *gestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    UIScreenEdgePanGestureRecognizer *gestureRecognizer =
+    [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
     gestureRecognizer.edges = UIRectEdgeLeft;
     
     self.presentingVC = viewController;
@@ -63,7 +66,7 @@
     {
         UINavigationController *navC = (UINavigationController *)viewController;
         
-        UIViewController *navRootVC = [navC.viewControllers objectAtIndex:0];
+        UIViewController *navRootVC = navC.viewControllers[0];
         
         [navRootVC.view addGestureRecognizer:gestureRecognizer];
         
@@ -99,7 +102,7 @@
             
         case UIGestureRecognizerStateChanged:
         {
-            if (translation.x > 0)  /** 防止拖拽超过屏幕左边 */
+            if (translation.x > 0.0)  /** 防止拖拽超过屏幕左边 */
             {
                 // Calculate the percentage of guesture
                 CGFloat percentComplete = translation.x / ([[UIScreen mainScreen] applicationFrame].size.width);
@@ -110,7 +113,7 @@
                 //NSLog(@"ttttt===%f", translation.x);
                 //NSLog(@"%f,percent", percentComplete);
                 
-                self.shouldComplete = (percentComplete > SWIPE_PERCENT);
+                self.shouldComplete = (percentComplete > ACST_SwipeShouldFinishDismissPercent);
                 
                 [self updateInteractiveTransition:percentComplete];
                 
@@ -134,7 +137,7 @@
             //NSLog(@"剩余距离%f", (([[UIScreen mainScreen] applicationFrame].size.width) - translation.x));
             //NSLog(@"动画时间%f", (([[UIScreen mainScreen] applicationFrame].size.width) - translation.x) / xSpeed);
             
-            if (xSpeed > 600)
+            if (xSpeed > 600.0)
             {
                 CGFloat leftDistance = ([[UIScreen mainScreen] applicationFrame].size.width) - translation.x;
                 NSTimeInterval leftTime = leftDistance / (xSpeed * 1.6); // 1.6 倍数随便设的，，看起来差不多了，因为不只是手指离开时的速度问题，还有加速度的惯性问题，单纯只用离开时速度算，手感就与现实物理世界感觉差距太大了，随便给个大一点速度凑乎了。
@@ -164,7 +167,7 @@
 #pragma mark - UIViewControllerInteractiveTransitioning Methods
 
 -(void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{
+{    
     // Maintain reference to context
     self.context = transitionContext;
     
@@ -175,19 +178,22 @@
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     // 设定 backVC 初始坐标
-    backVC.view.frame = CGRectOffset(screenBounds, PARALLAX_DX, 0.f);     // 初始位置 dx 有偏移 与 Present 中同步视差
+    backVC.view.frame = CGRectOffset(screenBounds, ACST_HorizontalParallax, 0.0);     // 初始位置 dx 有偏移 与 Present 中同步视差
     
     // 设定 frontVC 初始坐标
     frontVC.view.frame = screenBounds;
     
     // 黑色遮罩
     self.blackMask.frame = backVC.view.frame;
-    self.blackMask.alpha = BLACK_MASK_ALPHA_MAX;
+    self.blackMask.alpha = ACST_BlackMaskMaxAlpha;
     
     // 阴影遮罩
     self.shadowMask.frame = frontVC.view.frame;
-    self.shadowMask.alpha = SHADOW_MASK_ALPHA_MAX;
+    self.shadowMask.alpha = ACST_ShadowmaskMaxAlpha;
     self.shadowMask.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.shadowMask.bounds].CGPath;
+    
+    self.blackMask.hidden = NO;
+    self.shadowMask.hidden = NO;
     
     // Add target view to the container, and move it to back.
     UIView *containerView = [transitionContext containerView];
@@ -212,18 +218,18 @@
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     // 动画完成后将达到的最终坐标
-    frontVC.view.frame = CGRectOffset(screenBounds, distance, 0);
+    frontVC.view.frame = CGRectOffset(screenBounds, distance, 0.0);
     
-    CGFloat bVCShoudMove = PARALLAX_DX * (1 - self.percentComplete);
-    backVC.view.frame = CGRectOffset(screenBounds, bVCShoudMove, 0);
+    CGFloat bVCShoudMove = ACST_HorizontalParallax * (1.0 - self.percentComplete);
+    backVC.view.frame = CGRectOffset(screenBounds, bVCShoudMove, 0.0);
     
     // 黑色遮罩的位置与 下层的 backVC 保持一致，并在 Dismiss 后消失
     self.blackMask.frame = backVC.view.frame;
-    self.blackMask.alpha = BLACK_MASK_ALPHA_MAX * (1 - self.percentComplete);
+    self.blackMask.alpha = ACST_BlackMaskMaxAlpha * (1.0 - self.percentComplete);
     
     // 阴影遮罩的位置与 上层的 frontVC 保持一致，并在 Dismiss 后消失
     self.shadowMask.frame = frontVC.view.frame;
-    self.shadowMask.alpha = SHADOW_MASK_ALPHA_MAX * (1 - self.percentComplete);
+    self.shadowMask.alpha = ACST_ShadowmaskMaxAlpha * (1.0 - self.percentComplete);
 }
 
 /** 触摸结束后，未达到指定百分比，返回原状态 */
@@ -239,29 +245,30 @@
     
 
     // Do animate
-    [UIView animateWithDuration:(CANCEL_DURATION * self.percentComplete)
+    [UIView animateWithDuration:(ACST_SwipeCancleDismissDuration * self.percentComplete)
                           delay:0.0
-         usingSpringWithDamping:PRESENT_SPRING
+         usingSpringWithDamping:ACST_PresentSpring
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          
                          // 动画完成后将达到的最终坐标
-                         backVC.view.frame = CGRectOffset(screenBounds, PARALLAX_DX, 0.f); // 变化 dx 来做视差效果
+                         backVC.view.frame = CGRectOffset(screenBounds, ACST_HorizontalParallax, 0.0); // 变化 dx 来做视差效果
                          frontVC.view.frame = screenBounds;
                          
                          // 遮罩的位置与 下面的 VC 保持一致，并在 Present 完成后 达到最深色
                          self.blackMask.frame = backVC.view.frame;
-                         self.blackMask.alpha = BLACK_MASK_ALPHA_MAX;
+                         self.blackMask.alpha = ACST_BlackMaskMaxAlpha;
                          
                          // 阴影遮罩的位置与 上层的 frontVC 保持一致，并在 Present 完成后达到最深阴影
                          self.shadowMask.frame = frontVC.view.frame;
-                         self.shadowMask.alpha = SHADOW_MASK_ALPHA_MAX;
+                         self.shadowMask.alpha = ACST_ShadowmaskMaxAlpha;
                          
                          
                      } completion:^(BOOL finished) {
                          // Tell context that we completed.
-                         
+                         self.blackMask.hidden = YES;
+                         self.shadowMask.hidden = YES;
                          [self.context completeTransition:NO];
                      }];
     
@@ -272,7 +279,7 @@
 - (void)finishTranslation
 {
     // 按剩余百分比计算完成动画时间
-    NSTimeInterval leftTime = (FINISH_DURATION * (1 - self.percentComplete));
+    NSTimeInterval leftTime = (ACST_SwipeFinishDismissDuration * (1.0 - self.percentComplete));
     [self finishTranslationAnimationWithDuration:leftTime];
 }
 
@@ -291,18 +298,20 @@
     [UIView animateWithDuration:duration animations:^{
         
         // 动画完成后将达到的最终坐标
-        frontVC.view.frame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
+        frontVC.view.frame = CGRectOffset(screenBounds, screenBounds.size.width, 0.0);
         backVC.view.frame = screenBounds;
         
         // 黑色遮罩的位置与 下层的 backVC 保持一致，并在 Dismiss 后消失
         self.blackMask.frame = backVC.view.frame;
-        self.blackMask.alpha = 0.0f;
+        self.blackMask.alpha = 0.0;
         
         // 阴影遮罩的位置与 上层的 frontVC 保持一致，并在 Dismiss 后消失
         self.shadowMask.frame = frontVC.view.frame;
-        self.shadowMask.alpha = 0.0f;
+        self.shadowMask.alpha = 0.0;
         
     } completion:^(BOOL finished) {
+        self.blackMask.hidden = YES;
+        self.shadowMask.hidden = YES;
         [self.context completeTransition:YES];
     }];
     

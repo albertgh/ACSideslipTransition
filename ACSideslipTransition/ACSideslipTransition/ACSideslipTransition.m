@@ -7,7 +7,10 @@
 //
 
 #import "ACSideslipTransition.h"
-#import "ACSideslipMacros.h"
+
+#import "ACSideslipPresentAnimation.h"
+#import "ACSideslipDismissAnimation.h"
+#import "ACSideslipSwipeInteractiveTransition.h"
 
 @interface ACSideslipTransition () <UIViewControllerTransitioningDelegate>
 

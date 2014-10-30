@@ -10,29 +10,29 @@
 	<string>ACSideslipTransition</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>2E995B7C-7FB6-448E-B446-A91383A3C5A5</key>
+		<key>235FE0C448BA481BF2E5032AACE9D99B0F5CAC24</key>
 		<string>https://github.com/albertgh/ACSideslipTransition.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ACSideslipTransition.xcodeproj/project.xcworkspace</string>
+	<string>ACSideslipTransition.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2E995B7C-7FB6-448E-B446-A91383A3C5A5</key>
+		<key>235FE0C448BA481BF2E5032AACE9D99B0F5CAC24</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/albertgh/ACSideslipTransition.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2E995B7C-7FB6-448E-B446-A91383A3C5A5</string>
+	<string>235FE0C448BA481BF2E5032AACE9D99B0F5CAC24</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>2E995B7C-7FB6-448E-B446-A91383A3C5A5</string>
+			<string>235FE0C448BA481BF2E5032AACE9D99B0F5CAC24</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ACSideslipTransition</string>
 		</dict>

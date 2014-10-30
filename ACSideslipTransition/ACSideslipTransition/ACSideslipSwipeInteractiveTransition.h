@@ -6,10 +6,6 @@
 //  Copyright (c) 2013年 Albert Chu. All rights reserved.
 //
 
-/**
- *  侧滑手势驱动类
- */
-
 #import <Foundation/Foundation.h>
 
 #import "ACSideslipSwipeInteractiveTransitionFinishedDelegate.h"

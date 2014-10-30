@@ -53,23 +53,7 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
-    
-    // 测试 毛玻璃状态栏
-    UIToolbar *toolBar = [UIToolbar new];
-    toolBar.frame = CGRectMake(0.0f,0.0f,320.0f,20.0f);
-
-    //toolBar.barTintColor = [UIColor orangeColor];
-
-    // 分割线
-    CALayer *lineLayer = [[CALayer alloc] init];
-    lineLayer.frame = CGRectMake(0.0f,19.5f,320.0f,0.5f);
-    lineLayer.backgroundColor = [UIColor colorWithRed:200/255.f green:200/255.f blue:200/255.f alpha:1.f].CGColor;
-    [toolBar.layer addSublayer:lineLayer];
-
-    [self.view addSubview:toolBar];
-    
-    
-    
+        
     //-- 按钮 ---------------------------------------------------------------------------------------
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(100.0, 200.0, 120.0, 40.0);
