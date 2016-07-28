@@ -315,7 +315,7 @@
         [self.context completeTransition:YES];
     }];
     
-    if (nil != self.finishDelegate && [self.finishDelegate respondsToSelector:@selector(swipeInteractiveTransitionDidFinished)])
+    if (self.finishDelegate && [self.finishDelegate respondsToSelector:@selector(swipeInteractiveTransitionDidFinished)])
     {
         [self.finishDelegate swipeInteractiveTransitionDidFinished];
     }

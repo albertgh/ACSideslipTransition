@@ -35,15 +35,19 @@
     return self;
 }
 
-#pragma mark - Public Method
-
+#pragma mark - Public
 - (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC
+{
+    [self sideslip:newVC from:oldVC completion:nil];
+}
+
+- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC completion:(void (^ __nullable)(void))completion
 {
     newVC.transitioningDelegate = self;
     
     [self.interactiveTransition addGestureToViewController:newVC];
     
-    [oldVC presentViewController:newVC animated:YES completion:nil];
+    [oldVC presentViewController:newVC animated:YES completion:completion];
 }
 
 #pragma mark - Transition Delegate

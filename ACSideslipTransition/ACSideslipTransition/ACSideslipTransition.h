@@ -10,12 +10,8 @@
 
 @interface ACSideslipTransition : NSObject
 
-/**
- *  从当前视图控制器，侧滑出新的视图控制器
- *
- *  @param toVC   新的视图控制器
- *  @param fromVC 当前视图控制器
- */
 - (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC;
+
+- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC completion:(void (^ __nullable)(void))completion;
 
 @end
