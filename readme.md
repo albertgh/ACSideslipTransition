@@ -8,30 +8,19 @@ Make presentViewController's Animation more like pushViewController's。
 Drag **ACSideslipTransition** src folder into your project. 
 
 ```objective-c
-#import "ACSideslipTransition.h"
+#import "UIViewController+ACSideslip.h"
 ```
     
 ## Usage
 
-- Sideslip to a new viewController
+- Sideslip from some viewController to a new viewController
 
 ```objc
-SecondViewController *sVC =  [[SecondViewController alloc] init];
-        
-ACSideslipTransition *transition = [[ACSideslipTransition alloc] init];
-[transition sideslip:sVC from:self];
+[self ac_sideslip:newVC completion:^{
+    NSLog(@"sideslip complete");
+}];
 ```
 
-- Or a UINavigationController
-
-```objc
-SecondViewController *sVC =  [[SecondViewController alloc] init];
-    
-UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
-    
-self.sideslipTransition = [[ACSideslipTransition alloc] init];
-[self.sideslipTransition sideslip:nC from:self];
-```
 
 - Dismiss Delegate
 
@@ -49,20 +38,23 @@ self.sideslipTransition = [[ACSideslipTransition alloc] init];
 
 - (void)swipeInteractiveTransitionDidFinished
 {
-    // some thing you want to do when dismiss finished
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    NSLog(@"dismissed by gesture");
 }
 ```
 
 
-### Requirements
+## Requirements
 
 * ARC
 * iOS 7 +
 
 
+## ToDo
 
-#### License
+- [ ] option for swipe from left edge or full viewController.view
 
-######WTFPL 
+
+## License
+[**WTFPL**](https://en.wikipedia.org/wiki/WTFPL)
+
 
