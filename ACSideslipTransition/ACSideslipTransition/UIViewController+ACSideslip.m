@@ -17,11 +17,11 @@ static const char * kACSideslipTransitionObjectKey;
 
 #pragma mark - Public
 
-- (void)ac_sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC {
-    [self ac_sideslip:newVC from:oldVC completion:nil];
+- (void)ac_sideslip:(UIViewController * __nonnull)newVC {
+    [self ac_sideslip:newVC completion:nil];
 }
 
-- (void)ac_sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC completion:(void (^ __nullable)(void))completion {
+- (void)ac_sideslip:(UIViewController * __nonnull)newVC completion:(void (^ __nullable)(void))completion {
     ACSideslipTransition *sideslipTransitionObject = [self ac_sideslipTransitionObject];
     if (!sideslipTransitionObject) {
         sideslipTransitionObject = [[ACSideslipTransition alloc] init];

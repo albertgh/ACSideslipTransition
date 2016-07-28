@@ -27,7 +27,7 @@
     SecondViewController *sVC =  [[SecondViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
     
-    [self ac_sideslip:nC from:self completion:^{
+    [self ac_sideslip:nC completion:^{
         NSLog(@"sideslip complete");
     }];
 }
