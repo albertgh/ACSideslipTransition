@@ -25,6 +25,7 @@
 		507CB68F1860660F00A4470F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68C1860660F00A4470F /* SecondViewController.m */; };
 		76CECC0219791BD0000453FB /* UIViewController+NavigationBarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */; };
 		7AA09F3A1D4A486400922AC7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA09F391D4A486400922AC7 /* Launch Screen.storyboard */; };
+		7AA09F3D1D4A49E000922AC7 /* UIViewController+ACSideslip.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA09F3C1D4A49E000922AC7 /* UIViewController+ACSideslip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBarColors.m"; sourceTree = "<group>"; };
 		76FFFF391A0221E200AD5855 /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACSideslipSwipeInteractiveTransitionFinishedDelegate.h; sourceTree = "<group>"; };
 		7AA09F391D4A486400922AC7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7AA09F3B1D4A49E000922AC7 /* UIViewController+ACSideslip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ACSideslip.h"; sourceTree = "<group>"; };
+		7AA09F3C1D4A49E000922AC7 /* UIViewController+ACSideslip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ACSideslip.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 		507CB67B186065EA00A4470F /* ACSideslipTransition */ = {
 			isa = PBXGroup;
 			children = (
+				7AA09F3B1D4A49E000922AC7 /* UIViewController+ACSideslip.h */,
+				7AA09F3C1D4A49E000922AC7 /* UIViewController+ACSideslip.m */,
 				507CB67E186065EA00A4470F /* ACSideslipConstants.h */,
 				5020D720186185AF005A2A70 /* ACSideslipTransition.h */,
 				5020D721186185AF005A2A70 /* ACSideslipTransition.m */,
@@ -266,6 +271,7 @@
 				507CB68D1860660F00A4470F /* FirstViewController.m in Sources */,
 				507CB65D1860657200A4470F /* AppDelegate.m in Sources */,
 				507CB68F1860660F00A4470F /* SecondViewController.m in Sources */,
+				7AA09F3D1D4A49E000922AC7 /* UIViewController+ACSideslip.m in Sources */,
 				76CECC0219791BD0000453FB /* UIViewController+NavigationBarColors.m in Sources */,
 				507CB685186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */,
 				507CB6591860657200A4470F /* main.m in Sources */,
