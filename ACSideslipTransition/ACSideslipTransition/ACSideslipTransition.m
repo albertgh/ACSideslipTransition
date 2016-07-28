@@ -36,12 +36,12 @@
 }
 
 #pragma mark - Public
-- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC
+- (void)sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC
 {
     [self sideslip:newVC from:oldVC completion:nil];
 }
 
-- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC completion:(void (^ __nullable)(void))completion
+- (void)sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC completion:(void (^ __nullable)(void))completion
 {
     newVC.transitioningDelegate = self;
     

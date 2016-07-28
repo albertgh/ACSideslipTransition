@@ -10,8 +10,8 @@
 
 @interface ACSideslipTransition : NSObject
 
-- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC;
+- (void)sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC;
 
-- (void)sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC completion:(void (^ __nullable)(void))completion;
+- (void)sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC completion:(void (^ __nullable)(void))completion;
 
 @end

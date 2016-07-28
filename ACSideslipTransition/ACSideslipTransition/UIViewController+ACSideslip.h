@@ -14,8 +14,8 @@
 @interface UIViewController (ACSideslip)
 
 
-- (void)ac_sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC;
+- (void)ac_sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC;
 
-- (void)ac_sideslip:(UIViewController *)newVC from:(UIViewController *)oldVC completion:(void (^ __nullable)(void))completion;
+- (void)ac_sideslip:(UIViewController * __nonnull)newVC from:(UIViewController * __nonnull)oldVC completion:(void (^ __nullable)(void))completion;
 
 @end
