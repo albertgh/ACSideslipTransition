@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5020D70F186170B2005A2A70 /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D70E186170B2005A2A70 /* ThridViewController.m */; };
-		5020D710186170B2005A2A70 /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D70E186170B2005A2A70 /* ThridViewController.m */; };
 		5020D71718617C9C005A2A70 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71218617C9C005A2A70 /* nav_back@2x.png */; };
-		5020D71818617C9C005A2A70 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71218617C9C005A2A70 /* nav_back@2x.png */; };
 		5020D71E18617D12005A2A70 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71D18617D12005A2A70 /* nav_back.png */; };
-		5020D71F18617D12005A2A70 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5020D71D18617D12005A2A70 /* nav_back.png */; };
 		5020D722186185AF005A2A70 /* ACSideslipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D721186185AF005A2A70 /* ACSideslipTransition.m */; };
-		5020D723186185AF005A2A70 /* ACSideslipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5020D721186185AF005A2A70 /* ACSideslipTransition.m */; };
 		507CB64D1860657200A4470F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64C1860657200A4470F /* Foundation.framework */; };
 		507CB64F1860657200A4470F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64E1860657200A4470F /* CoreGraphics.framework */; };
 		507CB6511860657200A4470F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6501860657200A4470F /* UIKit.framework */; };
@@ -22,33 +18,14 @@
 		507CB6591860657200A4470F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6581860657200A4470F /* main.m */; };
 		507CB65D1860657200A4470F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB65C1860657200A4470F /* AppDelegate.m */; };
 		507CB65F1860657200A4470F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507CB65E1860657200A4470F /* Images.xcassets */; };
-		507CB6661860657200A4470F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6651860657200A4470F /* XCTest.framework */; };
-		507CB6671860657200A4470F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB64C1860657200A4470F /* Foundation.framework */; };
-		507CB6681860657200A4470F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CB6501860657200A4470F /* UIKit.framework */; };
-		507CB6701860657200A4470F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507CB66E1860657200A4470F /* InfoPlist.strings */; };
-		507CB6721860657200A4470F /* ACSideslipTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB6711860657200A4470F /* ACSideslipTransitionTests.m */; };
 		507CB683186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */; };
-		507CB684186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB67D186065EA00A4470F /* ACSideslipDismissAnimation.m */; };
 		507CB685186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */; };
-		507CB686186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB680186065EA00A4470F /* ACSideslipPresentAnimation.m */; };
 		507CB687186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */; };
-		507CB688186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB682186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m */; };
 		507CB68D1860660F00A4470F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68A1860660F00A4470F /* FirstViewController.m */; };
-		507CB68E1860660F00A4470F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68A1860660F00A4470F /* FirstViewController.m */; };
 		507CB68F1860660F00A4470F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68C1860660F00A4470F /* SecondViewController.m */; };
-		507CB6901860660F00A4470F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507CB68C1860660F00A4470F /* SecondViewController.m */; };
 		76CECC0219791BD0000453FB /* UIViewController+NavigationBarColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */; };
+		7AA09F3A1D4A486400922AC7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA09F391D4A486400922AC7 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		507CB6691860657200A4470F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 507CB6411860657200A4470F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 507CB6481860657200A4470F;
-			remoteInfo = ACSideslipTransition;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5020D70D186170B2005A2A70 /* ThridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThridViewController.h; sourceTree = "<group>"; };
@@ -68,7 +45,6 @@
 		507CB65B1860657200A4470F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		507CB65C1860657200A4470F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		507CB65E1860657200A4470F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		507CB6641860657200A4470F /* ACSideslipTransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACSideslipTransitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		507CB6651860657200A4470F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		507CB66D1860657200A4470F /* ACSideslipTransitionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACSideslipTransitionTests-Info.plist"; sourceTree = "<group>"; };
 		507CB66F1860657200A4470F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -87,6 +63,7 @@
 		76CECC0019791BD0000453FB /* UIViewController+NavigationBarColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBarColors.h"; sourceTree = "<group>"; };
 		76CECC0119791BD0000453FB /* UIViewController+NavigationBarColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBarColors.m"; sourceTree = "<group>"; };
 		76FFFF391A0221E200AD5855 /* ACSideslipSwipeInteractiveTransitionFinishedDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACSideslipSwipeInteractiveTransitionFinishedDelegate.h; sourceTree = "<group>"; };
+		7AA09F391D4A486400922AC7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,16 +74,6 @@
 				507CB64F1860657200A4470F /* CoreGraphics.framework in Frameworks */,
 				507CB6511860657200A4470F /* UIKit.framework in Frameworks */,
 				507CB64D1860657200A4470F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		507CB6611860657200A4470F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				507CB6661860657200A4470F /* XCTest.framework in Frameworks */,
-				507CB6681860657200A4470F /* UIKit.framework in Frameworks */,
-				507CB6671860657200A4470F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				507CB6491860657200A4470F /* ACSideslipTransition.app */,
-				507CB6641860657200A4470F /* ACSideslipTransitionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +131,7 @@
 				507CB68C1860660F00A4470F /* SecondViewController.m */,
 				5020D70D186170B2005A2A70 /* ThridViewController.h */,
 				5020D70E186170B2005A2A70 /* ThridViewController.m */,
+				7AA09F391D4A486400922AC7 /* Launch Screen.storyboard */,
 				507CB65E1860657200A4470F /* Images.xcassets */,
 				5020D70618617093005A2A70 /* Images */,
 				507CB6531860657200A4470F /* Supporting Files */,
@@ -247,24 +214,6 @@
 			productReference = 507CB6491860657200A4470F /* ACSideslipTransition.app */;
 			productType = "com.apple.product-type.application";
 		};
-		507CB6631860657200A4470F /* ACSideslipTransitionTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 507CB6781860657200A4470F /* Build configuration list for PBXNativeTarget "ACSideslipTransitionTests" */;
-			buildPhases = (
-				507CB6601860657200A4470F /* Sources */,
-				507CB6611860657200A4470F /* Frameworks */,
-				507CB6621860657200A4470F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				507CB66A1860657200A4470F /* PBXTargetDependency */,
-			);
-			name = ACSideslipTransitionTests;
-			productName = ACSideslipTransitionTests;
-			productReference = 507CB6641860657200A4470F /* ACSideslipTransitionTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -273,11 +222,6 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Albert Chu";
-				TargetAttributes = {
-					507CB6631860657200A4470F = {
-						TestTargetID = 507CB6481860657200A4470F;
-					};
-				};
 			};
 			buildConfigurationList = 507CB6441860657200A4470F /* Build configuration list for PBXProject "ACSideslipTransition" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -292,7 +236,6 @@
 			projectRoot = "";
 			targets = (
 				507CB6481860657200A4470F /* ACSideslipTransition */,
-				507CB6631860657200A4470F /* ACSideslipTransitionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,17 +248,8 @@
 				507CB6571860657200A4470F /* InfoPlist.strings in Resources */,
 				5020D71718617C9C005A2A70 /* nav_back@2x.png in Resources */,
 				5020D71E18617D12005A2A70 /* nav_back.png in Resources */,
+				7AA09F3A1D4A486400922AC7 /* Launch Screen.storyboard in Resources */,
 				507CB65F1860657200A4470F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		507CB6621860657200A4470F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5020D71F18617D12005A2A70 /* nav_back.png in Resources */,
-				5020D71818617C9C005A2A70 /* nav_back@2x.png in Resources */,
-				507CB6701860657200A4470F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,30 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		507CB6601860657200A4470F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				507CB6901860660F00A4470F /* SecondViewController.m in Sources */,
-				507CB684186065EA00A4470F /* ACSideslipDismissAnimation.m in Sources */,
-				507CB686186065EA00A4470F /* ACSideslipPresentAnimation.m in Sources */,
-				507CB68E1860660F00A4470F /* FirstViewController.m in Sources */,
-				507CB6721860657200A4470F /* ACSideslipTransitionTests.m in Sources */,
-				5020D710186170B2005A2A70 /* ThridViewController.m in Sources */,
-				5020D723186185AF005A2A70 /* ACSideslipTransition.m in Sources */,
-				507CB688186065EA00A4470F /* ACSideslipSwipeInteractiveTransition.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		507CB66A1860657200A4470F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 507CB6481860657200A4470F /* ACSideslipTransition */;
-			targetProxy = 507CB6691860657200A4470F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		507CB6551860657200A4470F /* InfoPlist.strings */ = {
@@ -480,46 +391,6 @@
 			};
 			name = Release;
 		};
-		507CB6791860657200A4470F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ACSideslipTransition.app/ACSideslipTransition";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ACSideslipTransition/ACSideslipTransition-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ACSideslipTransitionTests/ACSideslipTransitionTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		507CB67A1860657200A4470F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ACSideslipTransition.app/ACSideslipTransition";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ACSideslipTransition/ACSideslipTransition-Prefix.pch";
-				INFOPLIST_FILE = "ACSideslipTransitionTests/ACSideslipTransitionTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -537,15 +408,6 @@
 			buildConfigurations = (
 				507CB6761860657200A4470F /* Debug */,
 				507CB6771860657200A4470F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		507CB6781860657200A4470F /* Build configuration list for PBXNativeTarget "ACSideslipTransitionTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				507CB6791860657200A4470F /* Debug */,
-				507CB67A1860657200A4470F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
