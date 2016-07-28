@@ -8,12 +8,11 @@
 
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-#import "ACSideslipTransition.h"
+
+#import "UIViewController+ACSideslip.h"
 
 
 @interface FirstViewController ()
-
-@property (strong, nonatomic) ACSideslipTransition *sideslipTransition;
 
 @end
 
@@ -25,36 +24,37 @@
 
 - (void)buttonClicked:(id)sender
 {
-    SecondViewController *sVC =  [[SecondViewController alloc] init];
-    
+    SecondViewController *sVC =  [[SecondViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *nC = [[UINavigationController alloc] initWithRootViewController:sVC];
     
-    [self.sideslipTransition sideslip:nC from:self];
+    [self ac_sideslip:nC from:self completion:^{
+        NSLog(@"sideslip complete");
+    }];
 }
 
 
-#pragma mark - LifeCycle
+#pragma mark - Init
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.sideslipTransition = [ACSideslipTransition new];
+        
     }
     return self;
 }
+
+#pragma mark - View
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
     self.view.backgroundColor = [UIColor yellowColor];
     
         
-    //-- 按钮 ---------------------------------------------------------------------------------------
+    //-- test button
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(100.0, 200.0, 120.0, 40.0);
     button.backgroundColor = [UIColor orangeColor];
@@ -64,13 +64,13 @@
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
-    //---------------------------------------------------------------------------------------------;
+    //--------------------------------------------------------------------------------------------//
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 
