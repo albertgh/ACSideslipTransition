@@ -105,7 +105,9 @@
     } completion:^(BOOL finished) {
         self.blackMask.hidden = YES;
         self.shadowMask.hidden = YES;
+        
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        [backVC ac_removeTransitionObject];
     }];
 }
 

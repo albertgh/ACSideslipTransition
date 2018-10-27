@@ -18,4 +18,6 @@
 
 - (void)ac_sideslip:(UIViewController * __nonnull)newVC completion:(void (^ __nullable)(void))completion;
 
+- (void)ac_removeTransitionObject;
+
 @end

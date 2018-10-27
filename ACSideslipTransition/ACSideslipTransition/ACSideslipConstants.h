@@ -20,4 +20,6 @@ static CGFloat const ACST_SwipeShouldFinishDismissPercent       = 0.5;
 static CGFloat const ACST_SwipeFinishDismissDuration            = 0.1 / ACST_SwipeShouldFinishDismissPercent;
 static CGFloat const ACST_SwipeCancleDismissDuration            = 0.3 / ACST_SwipeShouldFinishDismissPercent;
 
+#import "UIViewController+ACSideslip.h"
+
 #endif

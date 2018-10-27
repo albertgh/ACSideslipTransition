@@ -312,7 +312,9 @@
     } completion:^(BOOL finished) {
         self.blackMask.hidden = YES;
         self.shadowMask.hidden = YES;
+        
         [self.context completeTransition:YES];
+        [backVC ac_removeTransitionObject];
     }];
     
     if (self.finishDelegate && [self.finishDelegate respondsToSelector:@selector(swipeInteractiveTransitionDidFinished)])

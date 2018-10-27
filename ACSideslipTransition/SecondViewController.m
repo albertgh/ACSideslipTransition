@@ -19,6 +19,11 @@
 
 @implementation SecondViewController
 
+- (void)dealloc
+{
+    NSLog(@"dealloc SecondViewController");
+}
+
 #pragma mark - ACSideslipSwipeInteractiveTransitionFinishedDelegate
 
 - (void)swipeInteractiveTransitionDidFinished

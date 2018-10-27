@@ -30,7 +30,23 @@ static const char * kACSideslipTransitionObjectKey;
     [sideslipTransitionObject sideslip:newVC from:self completion:completion];
 }
 
+- (void)ac_removeTransitionObject {
+    ACSideslipTransition *sideslipTransitionObject = [self ac_sideslipTransitionObject];
+    if (sideslipTransitionObject) {
+        objc_setAssociatedObject(self,
+                                 kACSideslipTransitionObjectKey,
+                                 nil,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        sideslipTransitionObject = nil;
+    }
+}
+
 #pragma mark - Associated Properties
+
+- (ACSideslipTransition *)ac_sideslipTransitionObject {
+    ACSideslipTransition *sideslipTransitionObject = objc_getAssociatedObject(self, kACSideslipTransitionObjectKey);
+    return sideslipTransitionObject;
+}
 
 - (void)ac_setSideslipTransitionObject:(ACSideslipTransition *)sideslipTransitionObject {
     objc_setAssociatedObject(self,
@@ -39,9 +55,6 @@ static const char * kACSideslipTransitionObjectKey;
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (ACSideslipTransition *)ac_sideslipTransitionObject {
-    ACSideslipTransition *sideslipTransitionObject = objc_getAssociatedObject(self, kACSideslipTransitionObjectKey);
-    return sideslipTransitionObject;
-}
+
 
 @end
